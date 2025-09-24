@@ -1,0 +1,139 @@
+.aboutpage {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 100px auto 300px;
+    padding: 0 16px; 
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+.aboutpagecontent {
+    display: block;
+}
+
+.aboutpagetitle {
+    color: #7CB9E8;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    font-size: clamp(12px, 2.2vw, 18px);
+    margin: 0;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: about-fade-in-text 2s 1s both;
+    animation-timeline: view(10px);
+}
+
+.aboutpagecaption {
+    font-size: clamp(14px, 3vw, 16px);
+    margin: 0;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: about-fade-in-text 2s 1s both;;
+    animation-timeline: view(10px);
+}
+
+.aboutpageimage {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    opacity: 0;
+    transform: translateY(16px);
+    animation: about-fade-up 3s 0.5s both;
+    animation-timeline: view(1px);
+}
+
+.aboutpagetext {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.aboutpagetext p {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: about-fade-in-text 2s 1s both;;
+    animation-timeline: view(10px);
+}
+
+.aboutpagetext h2 {
+    font-size: clamp(20px, 5vw, 27px);
+    line-height: 1.15;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(12px);
+    animation: about-fade-in-text 2s 1s both;;
+    animation-timeline: view(10px);
+}
+
+@media (min-width: 640px) {
+    .aboutpage { 
+        gap: 32px; 
+        padding: 0 24px; 
+    }
+}
+
+@media (min-width: 1024px) {
+    .aboutpage {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 40px;
+    }
+    .aboutpageimage { 
+        max-width: none; 
+    }
+}
+
+@supports not (animation-timeline: view()) {
+    .aboutpageimage,
+    .aboutpagetext h2,
+    .aboutpagecaption,
+    .aboutpagetitle,
+    .aboutpagetext p {
+        animation-timeline: auto;
+        animation-delay: 100ms;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .aboutpageimage,
+    .aboutpagetext h2,
+    .aboutpagecaption,
+    .aboutpagetitle,
+    .aboutpagetext p {
+        animation: none;
+        animation-timeline: none;
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes about-fade-up {
+    to {
+        scale: 1;
+        opacity: 1;
+    }
+}
+
+@keyframes about-fade-in-text {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+    0%{
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+        transform: translateY();
+    }
+    100%{
+        transform: translateY();
+    }
+}

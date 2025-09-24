@@ -1,0 +1,146 @@
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;  
+    justify-content: space-between;
+    gap: 24px;
+    padding: 72px 16px 80px;  
+    margin: 0 auto;
+    max-width: 1200px;
+    z-index: 1;
+    
+    
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 720px;
+    z-index: 1;
+}
+
+.title {
+    font-size: clamp(28px, 6vw, 56px);
+    margin: 0 0 16px;
+    line-height: 1.1;
+    animation: fade-up 1.5s 0.5s backwards;
+}
+
+.titlename {
+    color: red;
+}
+
+.caption {
+    color: grey;
+    font-size: clamp(14px, 2.8vw, 18px);
+    line-height: 1.6;
+    margin: 0 0 16px;
+    animation: fade-up 1.5s 0.5s backwards;
+}
+
+.heroimage {
+    width: min(45vw, 380px);
+    height: auto;
+    aspect-ratio: 1 / 1;
+    margin-top: 0;
+    z-index: 1;
+    border-radius: 50%;
+    object-fit: cover; 
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.socialmedia {
+    float: left;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    transition: transform 0.25s ease;
+    cursor: pointer;
+}
+
+.socialmedia:hover {
+    transform: scale(1.2);
+}
+
+.socialmediaicons, .techstackitems {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px 16px;
+    animation: fade-up 1.5s 0.5s backwards;
+}
+
+.soicalmediaicons::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.techstackitems {
+    margin-top: 20px;
+}
+
+.techstackitems p {
+  margin: 0 12px 0 0;
+  font-weight: 400;
+}
+
+.techstack, .techstack2 {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    transition: transform 0.25s ease;
+    cursor: pointer;
+}
+
+.techstack:hover, .techstack2:hover {
+    transform: scale(1.2);
+}
+
+.techstackitems::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+@media (min-width: 640px) {
+  .hero {
+    padding: 150px 24px 300px;
+    gap: 32px;
+  }
+  .socialmedia { width: 40px; height: 40px; }
+  .techstack, .techstack2 { width: 40px; height: 40px; }
+  .heroimage { width: min(32vw, 320px); }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    flex-direction: row;     
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+  }
+  .content { max-width: 640px; }
+  .heroimage { width: 360px; }  
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heroimage { animation: none; }
+  .title, .caption, .socialmediaicons, .techstackitems { animation: none; }
+}
+
+@keyframes floating {
+  0%   { transform: translate(0, 0); }
+  50%  { transform: translate(0, 30px); }
+  100% { transform: translate(0, 0); }
+}
+@keyframes fade-up {
+  0%   { opacity: 0; transform: translateY(30px) scale(0.9); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}

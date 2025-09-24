@@ -1,0 +1,183 @@
+.experiencepage {
+    position: relative;
+    margin-top: 100px;
+    z-index: 1;
+    margin-left: 15%;
+    margin-right: 10%;
+    display: flex;
+    margin-bottom: 350px;
+    flex-direction: column;
+}
+
+.experiencepageheadings {
+    margin-bottom: 75px;
+}
+
+.experiencepageheadings p {
+    animation: experience-fade-in-text 2s 1s both;
+    animation-timeline: view(10px);
+}
+
+.experiencepageheadings h2 {
+    animation: experience-fade-in-text 2s 1s both;
+    animation-timeline: view(10px);
+}
+
+.experiencepagetitle {
+    color: #7CB9E8;
+    font-weight: bold;
+    margin-right: 25%;
+}
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+}
+
+.timelineleftcontainer {
+    padding: 10px 50px;
+    position: relative;
+    width: 50%;
+    left: 0;  
+}
+
+.timelinerightcontainer {
+    padding: 10px 50px;
+    position: relative;
+    width: 50%;
+    left: 50%;
+}
+
+.timelineleftcontainer img {
+    position: absolute;
+    width: 50px;
+    border-radius: 10%;
+    right: -20px;
+    top: 32px;
+    z-index: 10;
+    transition: 0.5s ease;
+    cursor: pointer;
+    animation: experience-fade-in-text 3s 0.5s both;
+    animation-timeline: view(10px);
+}
+
+.timelineleftcontainer img:hover{
+    transform: scale(1.4);
+}
+
+.timelinerightcontainer img {
+    position: absolute;
+    width: 50px;
+    border-radius: 10%;
+    right: -20px;
+    top: 32px;
+    z-index: 10;
+    left: -20px;
+    transition: 0.5s ease;
+    cursor: pointer;
+    animation: experience-fade-in-text 3s 0.5s both;
+    animation-timeline: view(10px);
+}
+
+.timelinerightcontainer img:hover {
+    transform: scale(1.4);
+}
+
+.timelinetextbox {
+    padding: 20px 30px;
+    position: relative;
+    background: #e5fcf5;
+    border-radius: 6px;
+    font-size: 15px;
+    animation: experience-fade-in-text 2s 0.5s both;
+    animation-timeline: view(10px);
+}
+
+.timelinetextbox h3 {
+    font-weight: 600;
+    animation: experience-fade-in-text 3s 2s both;
+    animation-timeline: view(10px);
+}
+
+.timelinetextbox p {
+    animation: experience-fade-in-text 3s 2s both;
+    animation-timeline: view(10px);
+}
+
+.timelinetextbox small {
+    display: inline-block;
+    margin-bottom: 15px;
+    animation: experience-fade-in-text 3s 2s both;
+    animation-timeline: view(10px);
+}
+
+.timelinetextbox ul {
+    animation: experience-fade-in-text 3s 2s both;
+    animation-timeline: view(10px);
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background-color: #2a4d69;
+    top: 0%;
+    left: 50%;
+    margin-left: -3px;
+    z-index: -1;
+    animation: experience-fade-in-text 3s both;
+    animation-timeline: view(10px);
+}
+
+.left-timelinetextbox-arrow {
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 28px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid #e5fcf5;
+    right: -15px;
+}
+
+.right-timelinetextbox-arrow {
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 28px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid #e5fcf5;
+    left: -15px;
+}
+
+@keyframes experience-fade-up {
+    to {
+        scale: 1;
+        opacity: 1;
+    }
+}
+
+@keyframes experience-fade-in-text {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+    0%{
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+        transform: translateY();
+    }
+    100%{
+        transform: translateY();
+    }
+}
+
+
