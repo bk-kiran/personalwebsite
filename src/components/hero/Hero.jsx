@@ -58,6 +58,7 @@ const Hero = () => {
 
         </div>
         <img src={updatedprofilepic} alt="ProfilePic" className='heroimage'/>
+        
 
     
 
