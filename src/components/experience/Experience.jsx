@@ -51,8 +51,10 @@ const Experience = () => {
                 <div className="timelinetextbox">
                     <h3>Undergraduate Teaching Assistant</h3>
                     <small>Jan 2025-</small>
+                    <p>Graded quizzes, held weekly office hours, answered questions on Piazza for CICS classes with over <strong>150+</strong> students.</p>
                     <ul>
-                        <li>Employed as a an Undergraduate Course Assistant for the <strong>CS 119 (Introduction to Programming)</strong> course during the <strong>Spring 2025</strong> semester. </li>
+                        <li>Fall 2025: <strong>CS 230 Computer Systems</strong></li>
+                        <li>Spring 2025: <strong>CS 119 Introduction to Programming with Python</strong></li>
                     </ul>
                     <span className='left-timelinetextbox-arrow'></span>
                 </div>

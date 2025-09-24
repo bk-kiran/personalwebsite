@@ -17,6 +17,7 @@
 .portfoliopageheadings h2 {
     animation: portfolio-fade-in-text 2s 1s both;
     animation-timeline: view(10px);
+    font-size: clamp(24px, 4vw, 30px);
 }
 
 .porfoliopagetitle {

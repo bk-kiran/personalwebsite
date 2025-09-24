@@ -4,6 +4,7 @@ import Hero from './components/hero/Hero'
 import About from './components/about/About'
 import Portfolio from './components/portfolio/Portfolio'
 import Experience from './components/experience/Experience'
+import Metrics from './components/Metrics/Metrics'
 
 const App = () => {
 
@@ -12,6 +13,7 @@ const App = () => {
       <Navbar/>
       <Hero/>
       <About/>
+      <Metrics/>
       <Portfolio/>
       <Experience/>
     </div>

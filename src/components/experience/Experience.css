@@ -2,7 +2,7 @@
     position: relative;
     z-index: 1;
     max-width: 1200px;
-    margin: 100px auto 450px;
+    margin: 100px auto 400px;
     padding: 0 16px; 
     display: grid;
     grid-template-columns: 1fr;
@@ -21,6 +21,7 @@
 .experiencepageheadings h2 {
     animation: experience-fade-in-text 2s 1s both;
     animation-timeline: view(10px);
+    font-size: clamp(24px, 4vw, 30px);
 }
 
 .experiencepagetitle {

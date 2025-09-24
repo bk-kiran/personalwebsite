@@ -1,0 +1,326 @@
+.metricspage {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 100px auto 300px;
+    padding: 0 16px; 
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+.metricspageheadings {
+    margin-bottom: 5px;
+}
+
+.metricspageheadings p {
+    animation: metrics-fade-in-text 2s 1s both;
+    animation-timeline: view(10px);
+}
+
+.metricspageheadings h2 {
+    animation: metrics-fade-in-text 2s 1s both;
+    animation-timeline: view(10px);
+    font-size: clamp(24px, 4vw, 30px);
+}
+
+.metricspagetitle {
+    color: #7CB9E8;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    font-size: clamp(12px, 2.2vw, 18px);
+    margin: 0;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: metrics-fade-in-text 2s 1s both;
+    animation-timeline: view(10px);
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 32px;
+    margin-bottom: 40px;
+}
+
+.metrics-card {
+    background: #e5fcf5;
+    padding: 30px 25px;
+    border-radius: 6px;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: metrics-fade-in-text 2s 0.5s both;
+    animation-timeline: view(10px);
+}
+
+.metrics-card:nth-child(2) {
+    animation-delay: 0.7s;
+}
+
+.metrics-card:nth-child(3) {
+    animation-delay: 0.9s;
+}
+
+.metrics-card:nth-child(4) {
+    animation-delay: 1.1s;
+}
+
+.metrics-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.metrics-number {
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1;
+}
+
+.metrics-number.projects {
+    color: #2563eb;
+}
+
+.metrics-number.technologies {
+    color: #059669;
+}
+
+.metrics-number.commits {
+    color: #7c3aed;
+}
+
+.metrics-number.experience {
+    color: #dc2626;
+}
+
+.metrics-label {
+    color: #374151;
+    font-weight: 600;
+    font-size: clamp(16px, 2.5vw, 18px);
+    margin-bottom: 6px;
+}
+
+.metrics-description {
+    color: #666;
+    font-size: clamp(12px, 1.8vw, 14px);
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.github {
+    text-align: center;
+    margin-top: 40px;
+    opacity: 1;
+    transform: translateY(0);
+    animation: metrics-fade-in-text 2s 1s both;
+    animation-timeline: view(10px);
+}
+
+.github:hover {
+    transform: scale(1.2);
+}
+
+.metrics-status {
+    text-align: center;
+    margin-top: 40px;
+    opacity: 1;
+    transform: translateY(0);
+    animation: metrics-fade-in-text 2s 1s both;
+    animation-timeline: view(10px);
+}
+
+.status-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #e5fcf5;
+    padding: 12px 20px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.status-indicator:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    background: #10b981;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+.status-text {
+    color: #374151;
+    font-weight: 500;
+    font-size: clamp(14px, 2vw, 16px);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .metricspage {
+    margin: 60px auto 200px;
+    padding: 0 20px;
+    }
+    
+    .metricspageheadings {
+    margin-bottom: 32px;
+    text-align: center;
+    }
+    
+    .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 32px;
+    }
+    
+    .metrics-card {
+    padding: 20px 16px;
+    }
+    
+    .metrics-number {
+    font-size: clamp(24px, 6vw, 32px);
+    margin-bottom: 6px;
+    }
+    
+    .metrics-label {
+    font-size: 16px;
+    margin-bottom: 4px;
+    }
+    
+    .metrics-description {
+    font-size: 13px;
+    }
+    
+    .status-indicator {
+    padding: 10px 16px;
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+    }
+    
+    .status-text {
+    font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .metricspage {
+    margin: 40px auto 150px;
+    padding: 0 16px;
+    }
+    
+    .metricspageheadings {
+    margin-bottom: 24px;
+    }
+    
+    .metrics-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    }
+    
+    .metrics-card {
+    padding: 16px 12px;
+    }
+    
+    .status-indicator {
+    padding: 8px 12px;
+    }
+}
+
+@media (max-width: 320px) {
+    .metricspage {
+    padding: 0 12px;
+    }
+    
+    .metrics-card {
+    padding: 12px;
+    }
+    
+    .metrics-number {
+    font-size: clamp(20px, 8vw, 28px);
+    }
+    
+    .metrics-label {
+    font-size: 14px;
+    }
+    
+    .metrics-description {
+    font-size: 12px;
+    }
+}
+
+/* Animation Keyframes */
+@keyframes metrics-fade-in-text {
+    from {
+    opacity: 0;
+    }
+    to {
+    opacity: 1;
+    }
+    0%{
+    opacity: 0;
+    }
+    50% {
+    opacity: 1;
+    transform: translateY();
+    }
+    100%{
+    transform: translateY();
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    }
+    50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .metrics-card,
+    .metricspagetitle,
+    .metricspageheadings h2,
+    .metricspageheadings p,
+    .metrics-status {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    }
+    
+    .status-dot {
+    animation: none;
+    }
+    
+    .metrics-card:hover {
+    transform: none;
+    }
+}
+
+/* Animation timeline fallback */
+@supports not (animation-timeline: view()) {
+  .metrics-card,
+  .metricspagetitle,
+  .metricspageheadings h2,
+  .metricspageheadings p,
+  .metrics-status {
+    animation-timeline: auto;
+    animation-delay: 100ms;
+  }
+}
+
+/* Ensure status is always visible */
+.metrics-status {
+  visibility: visible !important;
+  display: block !important;
+}
