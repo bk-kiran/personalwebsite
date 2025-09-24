@@ -36,8 +36,11 @@ const Experience = () => {
                 <div className="timelinetextbox">
                     <h3>Software Engineer Intern @ Lee Yuen Housewares</h3>
                     <small>Jun 2025 - Aug 2025</small>
+                    <p>I built AI-driven systems to improve SKU-level demand forecasting, supplier pricing analysis, and product lifecycle management for household goods</p>
                     <ul>
-                        <li>TBC</li>
+                        <li>Built a Python + scikit-learn pipeline to forecast SKU-level sales demand, raising prediction accuracy to <strong>82%</strong>, reducing overstock by <strong>15%</strong>, and cutting annual storage costs by <strong>$20K</strong>.</li>
+                        <li>Engineered a React.js + Spring Boot platform that centralized BOM data, supplier pricing, and production schedules, reducing quotation turnaround time by <strong>30%</strong> and speeding OEM client delivery.</li>
+                        <li>Deployed Node.js + Docker microservices on Azure to scrape and benchmark competitor pricing across <strong>10K+</strong> SKUs, reducing runtime by <strong>40%</strong> and improving procurement decision-making.</li>
                     </ul>
                     <span className='right-timelinetextbox-arrow'></span>
                 </div>
@@ -60,8 +63,11 @@ const Experience = () => {
                 <div className="timelinetextbox">
                     <h3>Data Science Intern @ TruBridge Healthcare</h3>
                     <small>Dec 2024 - Jan 2025</small>
+                    <p>I focused on analyzing hospital readmission data and building scalable ETL pipelines to improve healthcare analytics across multiple hospital systems</p>
                     <ul>
-                        <li>TBC</li>
+                        <li>Analyzed <strong>50K+</strong> healthcare records using pandas, NumPy, and SQLAlchemy to uncover drivers of hospital readmissions.</li>
+                        <li>Built logistic regression and OLS models linking infection control KPIs to readmission rates, identifying significant predictors <strong>(p ≤ 0.01)</strong>.</li>
+                        <li>Optimized Python ETL pipelines on AWS S3/Lambda with vectorized preprocessing and async I/O, cutting runtime by <strong>35%</strong> and improving reliability for downstream hospital analytics.</li>
                     </ul>
                     <span className='right-timelinetextbox-arrow'></span>
                 </div>
@@ -96,15 +102,13 @@ const Experience = () => {
             <div className="timelineleftcontainer">
                 <img src={intern} alt=""/>
                 <div className="timelinetextbox">
-                    <h3>Software Engineer Intern @ Zyntro.io</h3>
+                    <h3>Software Engineer Intern @ Zyntra.io</h3>
                     <small>July 2023 - Aug 2023</small>
+                    <p>I worked on scaling a real-time messaging platform for workplace collaboration:</p>
                     <ul>
-                        <li>Worked closely with a team of <strong>7</strong> students to collaborate for a tech startup (heya.space) on an instant-messaging communication system, executing
-agile methodologies and tools like Git and Jira, leading to enhanced productivity.</li>
-                        <li>Increased system efficiency by <strong>30%</strong> through the design and integration of two responsive features leveraging
-ReactJS and Tailwind CSS, ensuring a seamless user experience across various platforms.</li>
-                        <li>Diagnosed and resolved over <strong>50</strong> software issues using tools such as Chrome DevTools and Postman, ensuring the
-system’s functionality and improving code quality across the application.</li>
+                        <li>Built a distributed messaging system with React.js, Node.js, MongoDB, and Socket.IO to support 2K+ concurrent users with low latency.</li>
+                        <li>Integrated REST + GraphQL APIs with secure blob handling and custom state synchronization, reducing render and API errors by <strong>35%</strong>.</li>
+                        <li>Implemented JWT-based authentication with refresh tokens and session expiration, cutting auth failures by <strong>60%</strong> and ensuring secure access control.</li>
                     </ul>
                     <span className='left-timelinetextbox-arrow'></span>
                 </div>

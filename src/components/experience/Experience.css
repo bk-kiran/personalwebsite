@@ -100,6 +100,7 @@
 }
 
 .timelinetextbox p {
+    margin-bottom: 15px;
     animation: experience-fade-in-text 3s 2s both;
     animation-timeline: view(10px);
 }
