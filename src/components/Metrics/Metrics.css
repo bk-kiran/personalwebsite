@@ -115,7 +115,7 @@
     margin-top: 40px;
     opacity: 1;
     transform: translateY(0);
-    animation: metrics-fade-in-text 2s 1s both;
+    animation: metrics-fade-in-text 2s 0.2s both;
     animation-timeline: view(10px);
 }
 
@@ -128,7 +128,7 @@
     margin-top: 40px;
     opacity: 1;
     transform: translateY(0);
-    animation: metrics-fade-in-text 2s 1s both;
+    animation: metrics-fade-in-text 2s 0.2s both;
     animation-timeline: view(10px);
 }
 

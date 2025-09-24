@@ -66,7 +66,7 @@
     z-index: 10;
     transition: 0.5s ease;
     cursor: pointer;
-    animation: experience-fade-in-text 3s 0.5s both;
+    animation: experience-fade-in-text 3s 0.2s both;
     animation-timeline: view(10px);
 }
 
@@ -85,7 +85,7 @@
     z-index: 10;
     transition: 0.5s ease;
     cursor: pointer;
-    animation: experience-fade-in-text 3s 0.5s both;
+    animation: experience-fade-in-text 3s 0.2s both;
     animation-timeline: view(10px);
 }
 
@@ -99,7 +99,7 @@
     background: #e5fcf5;
     border-radius: 6px;
     font-size: clamp(14px, 2vw, 16px);
-    animation: experience-fade-in-text 2s 0.5s both;
+    animation: experience-fade-in-text 2s 0.2s both;
     animation-timeline: view(10px);
 }
 
@@ -107,14 +107,14 @@
     font-weight: 600;
     font-size: clamp(16px, 2.5vw, 20px);
     margin-bottom: 8px;
-    animation: experience-fade-in-text 3s 2s both;
+    animation: experience-fade-in-text 3s 0.2s both;
     animation-timeline: view(10px);
 }
 
 .timelinetextbox p {
     margin-bottom: 15px;
     line-height: 1.6;
-    animation: experience-fade-in-text 3s 2s both;
+    animation: experience-fade-in-text 3s 0.2s both;
     animation-timeline: view(10px);
 }
 
@@ -124,12 +124,12 @@
     font-size: clamp(12px, 1.8vw, 14px);
     color: #666;
     font-weight: 500;
-    animation: experience-fade-in-text 3s 2s both;
+    animation: experience-fade-in-text 3s 0.2s both;
     animation-timeline: view(10px);
 }
 
 .timelinetextbox ul {
-    animation: experience-fade-in-text 3s 2s both;
+    animation: experience-fade-in-text 3s 0.2s both;
     animation-timeline: view(10px);
     padding-left: 20px;
 }

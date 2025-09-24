@@ -18,8 +18,6 @@ const About = () => {
 
             <p className='aboutpagecaption'>I'm passionate about leveraging technology to create intelligent, scalable systems that integrate AI in predictive analytics, NLP, and automation to optimize efficiency and drive impact.</p>
         </div>
-
-        <img src="https://github-readme-stats.vercel.app/api?username=bk-kiran&show_icons=true&hide=stars,prs,issues,contribs" alt="background" className='aboutpagebg'/>
     </section>
       
   )
