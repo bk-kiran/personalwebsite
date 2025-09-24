@@ -1,16 +1,16 @@
 .experiencepage {
     position: relative;
-    margin-top: 100px;
     z-index: 1;
-    margin-left: 15%;
-    margin-right: 10%;
-    display: flex;
-    margin-bottom: 350px;
-    flex-direction: column;
+    max-width: 1200px;
+    margin: 100px auto 300px;
+    padding: 0 16px; 
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
 }
 
 .experiencepageheadings {
-    margin-bottom: 75px;
+    margin-bottom: 48px;
 }
 
 .experiencepageheadings p {
@@ -25,8 +25,14 @@
 
 .experiencepagetitle {
     color: #7CB9E8;
-    font-weight: bold;
-    margin-right: 25%;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    font-size: clamp(12px, 2.2vw, 18px);
+    margin: 0;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: about-fade-in-text 2s 1s both;
+    animation-timeline: view(10px);
 }
 
 .timeline {
