@@ -18,6 +18,8 @@ const About = () => {
 
             <p className='aboutpagecaption'>I'm passionate about leveraging technology to create intelligent, scalable systems that integrate AI in predictive analytics, NLP, and automation to optimize efficiency and drive impact.</p>
         </div>
+
+        <img src="https://ghchart.rshah.org/bk-kiran" alt="Kiran's Github chart" />
     </section>
       
   )
