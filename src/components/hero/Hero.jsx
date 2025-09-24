@@ -22,6 +22,15 @@ import psql from '../../assets/psql.png'
 import mongodb from '../../assets/mongodb.png'
 import aws from '../../assets/aws.png'
 import azure from '../../assets/azure.png'
+import nextjs from '../../assets/nextjs.svg'
+import fastapi from '../../assets/fastapi.svg'
+import supabase from '../../assets/supabase.png'
+import git from '../../assets/git.png'
+import tf from '../../assets/tf.png'
+import keras from '../../assets/keras.png'
+import hf from '../../assets/hf.png'
+import pt from '../../assets/pytorch.png'
+
 
 
 const Hero = () => {
@@ -42,17 +51,23 @@ const Hero = () => {
                 <img src={python} className='techstack'/>
                 <img src={java} className='techstack'/>
                 <img src={js} className='techstack'/>
-                <img src={c} className='techstack'/>
                 <img src={reactlogo} className='techstack'/>
                 <img src={html} className='techstack'/>
                 <img src={tailwind} className='techstack'/>
                 <img src={spring} className='techstack'/>
                 <img src={nodejs} className='techstack'/>
-                <img src={express} className='techstack'/>
+                <img src={nextjs} className='techstack'/>
+                <img src={fastapi} className='techstack'/>
                 <img src={psql} className='techstack'/>
                 <img src={mongodb} className='techstack'/>
                 <img src={aws} className='techstack'/>
                 <img src={azure} className='techstack'/>
+                <img src={supabase} className='techstack'/>
+                <img src={tf} className='techstack'/>
+                <img src={keras} className='techstack'/>
+                <img src={hf} className='techstack'/>
+                <img src={pt} className='techstack'/>
+                <img src={git} className='techstack'/>
 
             </div>
 

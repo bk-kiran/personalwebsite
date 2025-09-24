@@ -1,16 +1,15 @@
 import React from 'react'
-import './About.css'
-import aboutbg from '../../assets/aboutbg.jpg'
-import umassbg from '../../assets/umass2.avif'
+import './GitHub.css'
 
-const About = () => {
+
+const GitHub = () => {
   return (
     <section className='aboutpage' id="aboutpage">
         <div className='aboutpagecontent'>
             <img className='aboutpageimage' alt="background" src={umassbg}></img>      
         </div>
         <div className='aboutpagetext'>
-            <p className='aboutpagetitle'>ABOUT ME</p>
+            <p className='aboutpagetitle'>GITHUB STATS</p>
 
             <h2>Software Engineer & AI/ML Enthusiast 🍀</h2>
 
@@ -19,10 +18,10 @@ const About = () => {
             <p className='aboutpagecaption'>I'm passionate about leveraging technology to create intelligent, scalable systems that integrate AI in predictive analytics, NLP, and automation to optimize efficiency and drive impact.</p>
         </div>
 
-        <img src="https://github-readme-stats.vercel.app/api?username=bk-kiran&show_icons=true&hide=stars,prs,issues,contribs" alt="background" className='aboutpagebg'/>
+        <img src="https://ghchart.rshah.org/bk-kiran" alt="Kiran's Github chart" />
     </section>
       
   )
 }
 
-export default About
+export default GitHub

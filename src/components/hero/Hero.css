@@ -9,6 +9,7 @@
     margin: 0 auto;
     max-width: 1200px;
     z-index: 1;
+    margin-top: 35px;
     
     
 }
@@ -45,15 +46,15 @@
     width: min(45vw, 380px);
     height: auto;
     aspect-ratio: 1 / 1;
-    margin-top: 0;
+    margin-top: -40px;
     z-index: 1;
     border-radius: 50%;
     object-fit: cover; 
-    animation-name: floating;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-}
+
+    animation: 
+      fade-up 1.5s 0.5s backwards,
+      floating 3s ease-in-out infinite;
+  }
 
 .socialmedia {
     float: left;
