@@ -2,7 +2,7 @@
     position: relative;
     z-index: 1;
     max-width: 1200px;
-    margin: 100px auto 400px;
+    margin: 100px auto 300px;
     padding: 0 16px; 
     display: grid;
     grid-template-columns: 1fr;

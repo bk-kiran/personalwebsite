@@ -38,7 +38,7 @@ const Hero = () => {
     <section className='hero'>
         <div className='content'>
             <h1 className="title">Hi, I'm <span className='titlename'>Kiran</span> 👋</h1>
-            <p className="caption"><strong>Hi I'm Kiran BK!</strong> A Computer Science Junior studying at the University of Massachusetts Amherst📍</p>
+            <p className="caption"><strong>Hi I'm Kiran BK!</strong> An Honors Computer Science Junior studying at the University of Massachusetts Amherst📍</p>
             
             <div className='socialmediaicons'>
                 <a href="https://www.linkedin.com/in/bk-kiran/" target='__blank' rel="noopener noreferrer"><img src={linkedin} alt="LinkedIn" className='socialmedia'/></a>

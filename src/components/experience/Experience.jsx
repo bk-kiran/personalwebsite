@@ -24,9 +24,7 @@ const Experience = () => {
                 <div className="timelinetextbox">
                     <h3>Software Developer @ BUILD UMass</h3>
                     <small>Sep 2025-</small>
-                    <ul>
-                        <li>TBC</li>
-                    </ul>
+                    <p>BUILD is a pro-bono organization working with local businesses, charities to build technical products.</p>
                     <span className='left-timelinetextbox-arrow'></span>
                 </div>
             </div>
@@ -96,6 +94,8 @@ const Experience = () => {
                     <small>Feb 2024-</small>
                     <ul>
                         <li>One of <strong>72</strong> freshman and sophomores accepted into a highly competitive 20-credit STEM research program</li>
+                        <li>iCons 2: Researched AI-driven energy forecasting using real-time UMass campus data; developed and evaluated mL models to predict peak electricity consumption, enabling smarter energy optimization strategies.<strong>(pandas, scikit-learn)</strong></li>
+                        <li>iCons 1: Analyzed rural perceptions of wind energy using sentiment analysis <strong>(NLTK VADER, Pandas, CAD)</strong>; co-developed a 3D-printed wind-powered energy storage prototype balancing engineering feasibility with social acceptance.</li>
                     </ul>
                     <span className='right-timelinetextbox-arrow'></span>
                 </div>

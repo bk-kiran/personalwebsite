@@ -5,6 +5,7 @@ import About from './components/about/About'
 import Portfolio from './components/portfolio/Portfolio'
 import Experience from './components/experience/Experience'
 import Metrics from './components/Metrics/Metrics'
+import Footer from './components/footer/Footer'
 
 const App = () => {
 
@@ -14,8 +15,9 @@ const App = () => {
       <Hero/>
       <About/>
       <Metrics/>
-      <Portfolio/>
       <Experience/>
+      <Portfolio/>
+      <Footer/>
     </div>
   )
 }

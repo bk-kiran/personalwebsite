@@ -2,10 +2,13 @@ import React from 'react'
 import './Portfolio.css'
 import waproject from '../../assets/whatsapp.webp'
 import djproject from '../../assets/stocks.jpeg'
-import videogameproject from '../../assets/vgproject.png'
+import financehive from '../../assets/finance.jpeg'
 import foodproject from '../../assets/cuisineresultspage.png'
 import amazonproject from '../../assets/amazon.jpg'
 import vgamefinder from '../../assets/vgamefinder.jpeg'
+import resumeister from '../../assets/ResuMeister.png'
+import fantasypl from '../../assets/FantasyPL.png'
+import summafy from '../../assets/Summafy.png'
 
 const Portfolio = () => {
   return (
@@ -17,8 +20,8 @@ const Portfolio = () => {
         </div>
 
         <div className='project1'>
-            <img className='project1screenshot' src={vgamefinder}/>
-            <h1 className='project1title'>Fantasy Premier League Player Finder ⚽🔍</h1>
+            <img className='project1screenshot' src={fantasypl}/>
+            <h1 className='project1title'>Fantasy EPL Player Finder ⚽🔍</h1>
             <br></br>
             <p className='project1caption'>Search, compare, and analyze 500+ soccer players with ease. Featuring an interactive React.js frontend with real-time filters and a Spring Boot + PostgreSQL backend, it handles 5K+ concurrent users while ensuring sub-500ms response times through optimized queries and RESTful APIs.</p>
             <br></br>
@@ -28,7 +31,7 @@ const Portfolio = () => {
         </div>
 
         <div className='project2'>
-            <img className='project2screenshot' src={amazonproject}/>
+            <img className='project2screenshot' src={financehive}/>
             <h1 className='project2title'>Finance Hive 💰</h1>
             <p className='project2caption'>An AI-powered personal finance assistant app for iOS that blends budgeting, stock tracking, simulations, and gamified learning. Built with Swift + SwiftUI in an MVVM architecture, Finance Hive features Finbot (AI assistant), a personalized dashboard, and community-driven challenges to make finance approachable and fun.</p>
             <br></br>
@@ -38,7 +41,7 @@ const Portfolio = () => {
         </div>
 
         <div className='project1'>
-            <img className='project1screenshot' src={vgamefinder}/>
+            <img className='project1screenshot' src={resumeister}/>
             <h1 className='project1title'>AI Resume Analyzer 📑🤖</h1>
             <br></br>
             <p className='project1caption'>Ace the resume screen with this AI-powered analyzer! Built with React.js and Claude APIs, it achieves 92% ATS accuracy and reduces feedback latency by 40% through prompt-engineered NLP pipelines. Securely processes 100+ resumes in parallel with Puter.js serverless auth and encrypted storage, delivering faster and more consistent feedback.</p>
@@ -49,7 +52,7 @@ const Portfolio = () => {
         </div>
 
         <div className='project2'>
-            <img className='project2screenshot' src={amazonproject}/>
+            <img className='project2screenshot' src={summafy}/>
             <h1 className='project2title'>Summafy 📰</h1>
             <br></br>
             <p className='project2caption'>Stay informed in seconds. Summafy is a clean Chrome extension that extracts the main content from any article and generates concise AI-powered summaries using Google Gemini. Designed with a focus on clarity and usability, it transforms long reads into quick takeaways.</p>
