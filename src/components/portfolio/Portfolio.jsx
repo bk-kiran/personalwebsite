@@ -27,7 +27,7 @@ const Portfolio = () => {
             <br></br>
             <p><span className='projecttag1'>#springboot</span>&nbsp;&nbsp;&nbsp;<span className='projecttag2'>#reactjs</span>&nbsp;&nbsp;&nbsp;<span className='projecttag3'>#postgresql</span></p>
             <br></br>
-            <p><a className='viewcodedemo' href="https://github.com/bk-kiran/FantasyPL-DataHub-24-25-" target='__blank'>Code</a>&nbsp;&nbsp;👨‍💻&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a className='viewcodedemo' href="https://vgamefinder.kiranbk.com/" target='__blank'>Live Demo</a>&nbsp;&nbsp;🖥️</p>
+            <p><a className='viewcodedemo' href="https://github.com/bk-kiran/FantasyPL-DataHub-24-25-" target='__blank'>Code</a>&nbsp;&nbsp;👨‍💻&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a className='viewcodedemo' href="#" target='__blank'>Live Demo</a>&nbsp;&nbsp;🖥️</p>
         </div>
 
         <div className='project2'>
@@ -48,7 +48,7 @@ const Portfolio = () => {
             <br></br>
             <p><span className='projecttag7'>#react</span>&nbsp;&nbsp;&nbsp;<span className='projecttag1'>#nlp</span>&nbsp;&nbsp;&nbsp;<span className='projecttag3'>#puterjs</span></p>
             <br></br>
-            <p><a className='viewcodedemo' href="https://github.com/bk-kiran/ai_resume_analyzer" target='__blank'>Code</a>&nbsp;&nbsp;👨‍💻&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a className='viewcodedemo' href="https://vgamefinder.kiranbk.com/" target='__blank'>Live Demo</a>&nbsp;&nbsp;🖥️</p>
+            <p><a className='viewcodedemo' href="https://github.com/bk-kiran/ai_resume_analyzer" target='__blank'>Code</a>&nbsp;&nbsp;👨‍💻&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a className='viewcodedemo' href="#" target='__blank'>Live Demo</a>&nbsp;&nbsp;🖥️</p>
         </div>
 
         <div className='project2'>
