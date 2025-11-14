@@ -1,13 +1,13 @@
 // Chatbot Widget Loader
-// Add this to your website: <script src="chatbot-widget.js"></script>
+// Add this to your website: <script src="chat-withbk.js"></script>
 
 (function() {
     // Configuration
     const config = {
-        chatbotUrl: 'https://chatwithbk-gn15scg0j-bk-kirans-projects.vercel.app/',
+        chatbotUrl: 'https://chatwithbk.vercel.app/widget', // ✅ Using optimized widget route
         buttonColor: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-        headerTitle: 'Chat with BK Kiran',
-        headerSubtitle: 'Ask me anything!',
+        headerTitle: 'Chat with BK Bot',
+        headerSubtitle: 'Ask Anything about Kiran!',
         position: 'right' // 'right' or 'left'
     };
 
@@ -28,10 +28,34 @@
             align-items: center;
             justify-content: center;
             z-index: 9998;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            
+            /* Fade-down entry animation with delay */
+            opacity: 0;
+            animation: fadeDown 0.6s ease-out 0.8s forwards;
         }
-        .chat-widget-button:hover { transform: scale(1.1); }
-        .chat-widget-button svg { width: 30px; height: 30px; fill: white; }
+        
+        @keyframes fadeDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-30px) scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0px) scale(1);
+            }
+        }
+        
+        .chat-widget-button:hover { 
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .chat-widget-button svg { 
+            width: 30px; 
+            height: 30px; 
+            fill: white;
+        }
         .chat-widget-container {
             position: fixed;
             bottom: 90px;
