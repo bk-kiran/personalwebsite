@@ -1,0 +1,468 @@
+.pomodoro-timer-app {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.pomodoro-timer-container {
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .pomodoro-timer-container {
+    background: #0a0a0a;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.pomodoro-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.pomodoro-title {
+    font-size: clamp(20px, 3vw, 24px);
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    transition: color 0.3s ease;
+}
+
+body.dark-mode .pomodoro-title {
+    color: #ffffff;
+}
+
+.settings-btn {
+    background: #f3f4f6;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-btn:hover {
+    background: #e5e7eb;
+    transform: rotate(90deg);
+}
+
+body.dark-mode .settings-btn {
+    background: #2a2a2a;
+}
+
+body.dark-mode .settings-btn:hover {
+    background: #3a3a3a;
+}
+
+.mode-switcher {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 32px;
+    background: #f3f4f6;
+    padding: 6px;
+    border-radius: 12px;
+}
+
+body.dark-mode .mode-switcher {
+    background: #2a2a2a;
+}
+
+.mode-btn {
+    flex: 1;
+    padding: 10px 16px;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #6b7280;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.mode-btn:hover:not(:disabled) {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.mode-btn.active {
+    background: white;
+    color: #1f2937;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mode-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+body.dark-mode .mode-btn {
+    color: #9ca3af;
+}
+
+body.dark-mode .mode-btn:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .mode-btn.active {
+    background: #1a1a1a;
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.timer-display {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    margin: 0 auto 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid #ef4444;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.progress-ring {
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    pointer-events: none;
+}
+
+.mode-label {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    z-index: 1;
+}
+
+.time-text {
+    font-size: clamp(48px, 8vw, 64px);
+    font-weight: 700;
+    color: #1f2937;
+    font-family: 'Space Grotesk', monospace;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+body.dark-mode .time-text {
+    color: #ffffff;
+}
+
+.timer-controls {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 32px;
+}
+
+.control-btn {
+    padding: 14px 32px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.control-btn.primary {
+    background: #ef4444;
+    color: white;
+    flex: 2;
+}
+
+.control-btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(239, 68, 68, 0.3);
+}
+
+.control-btn.secondary {
+    background: #f3f4f6;
+    color: #374151;
+    flex: 1;
+}
+
+.control-btn.secondary:hover {
+    background: #e5e7eb;
+}
+
+body.dark-mode .control-btn.secondary {
+    background: #2a2a2a;
+    color: #e5e7eb;
+}
+
+body.dark-mode .control-btn.secondary:hover {
+    background: #3a3a3a;
+}
+
+.sessions-counter {
+    text-align: center;
+    padding: 20px;
+    background: #f9fafb;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+body.dark-mode .sessions-counter {
+    background: #2a2a2a;
+}
+
+.sessions-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+body.dark-mode .sessions-label {
+    color: #9ca3af;
+}
+
+.sessions-count {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1f2937;
+    font-family: 'Space Grotesk', sans-serif;
+    margin-bottom: 12px;
+    transition: color 0.3s ease;
+}
+
+body.dark-mode .sessions-count {
+    color: #ffffff;
+}
+
+.reset-sessions-btn {
+    background: transparent;
+    border: 1px solid #e5e7eb;
+    color: #6b7280;
+    padding: 6px 16px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.reset-sessions-btn:hover {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+body.dark-mode .reset-sessions-btn {
+    border-color: #3a3a3a;
+    color: #9ca3af;
+}
+
+body.dark-mode .reset-sessions-btn:hover {
+    background: #3a3a3a;
+    color: #ffffff;
+}
+
+.settings-panel {
+    margin-top: 24px;
+    padding: 24px;
+    background: #f9fafb;
+    border-radius: 12px;
+    animation: slideDown 0.3s ease;
+}
+
+body.dark-mode .settings-panel {
+    background: #2a2a2a;
+}
+
+.settings-panel h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0 0 20px 0;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    transition: color 0.3s ease;
+}
+
+body.dark-mode .settings-panel h3 {
+    color: #ffffff;
+}
+
+.setting-group {
+    margin-bottom: 16px;
+}
+
+.setting-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 6px;
+    font-family: 'Inter', sans-serif;
+    transition: color 0.3s ease;
+}
+
+body.dark-mode .setting-group label {
+    color: #e5e7eb;
+}
+
+.setting-group input[type='number'] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+    background: white;
+    color: #1f2937;
+}
+
+.setting-group input[type='number']:focus {
+    outline: none;
+    border-color: #7CB9E8;
+    box-shadow: 0 0 0 3px rgba(124, 185, 232, 0.1);
+}
+
+body.dark-mode .setting-group input[type='number'] {
+    background: #1a1a1a;
+    border-color: #3a3a3a;
+    color: #ffffff;
+}
+
+body.dark-mode .setting-group input[type='number']:focus {
+    border-color: #ff1b6b;
+    box-shadow: 0 0 0 3px rgba(255, 27, 107, 0.1);
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.checkbox-group input[type='checkbox'] {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.close-settings-btn {
+    width: 100%;
+    padding: 10px;
+    background: #7CB9E8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 8px;
+    font-family: 'Inter', sans-serif;
+}
+
+.close-settings-btn:hover {
+    background: #5a9fd8;
+}
+
+body.dark-mode .close-settings-btn {
+    background: #ff1b6b;
+}
+
+body.dark-mode .close-settings-btn:hover {
+    background: #ff006e;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .pomodoro-timer-container {
+        padding: 24px 20px;
+    }
+
+    .timer-display {
+        width: 240px;
+        height: 240px;
+    }
+
+    .progress-ring svg {
+        width: 240px;
+        height: 240px;
+    }
+
+    .progress-ring circle {
+        r: 110;
+    }
+
+    .time-text {
+        font-size: 48px;
+    }
+
+    .timer-controls {
+        flex-direction: column;
+    }
+
+    .control-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .pomodoro-timer-app {
+        padding: 16px;
+    }
+
+    .pomodoro-timer-container {
+        padding: 20px 16px;
+    }
+
+    .mode-switcher {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .timer-display {
+        width: 200px;
+        height: 200px;
+    }
+
+    .progress-ring svg {
+        width: 200px;
+        height: 200px;
+    }
+
+    .progress-ring circle {
+        r: 90;
+    }
+
+    .time-text {
+        font-size: 40px;
+    }
+}

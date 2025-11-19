@@ -2,6 +2,7 @@ import React from 'react'
 import { useParams, Link } from 'react-router-dom'
 import './AppWrapper.css'
 import WordleClone from './WordleClone'
+import PomodoroTimer from './PomodoroTimer'
 
 const AppWrapper = () => {
   const { slug } = useParams()
@@ -19,6 +20,37 @@ const AppWrapper = () => {
         'Daily challenges',
         'Statistics tracking',
         'Share results'
+      ]
+    },
+    'pomodoro': {
+      name: 'Pomodoro Timer',
+      description: 'Boost your productivity with the Pomodoro Technique. Set work and break intervals, track sessions, and stay focused.',
+      icon: '⏰',
+      category: 'Productivity',
+      component: PomodoroTimer,
+      githubUrl: '#',
+      features: [
+        'Customizable work/break durations',
+        'Audio notifications',
+        'Session tracking',
+        'Auto-start options',
+        'Daily statistics'
+      ]
+    },
+    'json-formatter': {
+      name: 'JSON Formatter',
+      description: 'Format, validate, minify, and manipulate JSON data with this comprehensive developer tool.',
+      icon: '🛠️',
+      category: 'Developer Tools',
+      component: JSONFormatter,
+      githubUrl: '#',
+      features: [
+        'Format & pretty-print JSON',
+        'Minify JSON',
+        'Validate syntax',
+        'Sort object keys',
+        'Escape/Unescape strings',
+        'Copy & download output'
       ]
     }
     // Add more apps here as you build them

@@ -19,8 +19,30 @@ const AppsPage = () => {
       icon: '🎮',
       category: 'Games',
       featured: true,
-      githubUrl: 'https://github.com/bk-kiran/wordleclone', // Add your GitHub URL here
-      hasApp: true, // Set to true since you have it built
+      githubUrl: 'https://github.com/bk-kiran/wordleclone',
+      hasApp: true,
+    },
+    {
+      id: 2,
+      name: 'Pomodoro Timer',
+      slug: 'pomodoro',
+      description: 'Stay focused with this productivity timer. Customize work/break intervals and track your progress!',
+      icon: '⏰',
+      category: 'Productivity',
+      featured: true,
+      githubUrl: '#',
+      hasApp: true,
+    },
+    {
+      id: 3,
+      name: 'JSON Formatter',
+      slug: 'json-formatter',
+      description: 'Format, validate, and manipulate JSON data with ease. Perfect for developers!',
+      icon: '🛠️',
+      category: 'Developer Tools',
+      featured: true,
+      githubUrl: '#',
+      hasApp: false,
     },
   ]
 
