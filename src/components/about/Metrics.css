@@ -1,0 +1,185 @@
+.metricspage {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;  /* Reduced from 1200px */
+    margin: 70px auto 60px;  /* Reduced from 100px auto 80px */
+    padding: 0 16px; 
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;  /* Reduced from 24px */
+}
+
+.page-enter {
+    animation: fade-up 1.5s 0.5s backwards;
+}
+
+.metricspageheadings {
+    margin-bottom: 5px;
+}
+
+.metricspageheadings h2 {
+    font-size: clamp(22px, 3.5vw, 26px);  /* Reduced from clamp(24px, 4vw, 30px) */
+}
+
+.metricspagetitle {
+    color: #7CB9E8;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    font-size: clamp(11px, 2vw, 15px);  /* Reduced from clamp(12px, 2.2vw, 18px) */
+    margin: 0;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));  /* Reduced from 250px */
+    gap: 20px;  /* Reduced from 32px */
+    margin-bottom: 30px;  /* Reduced from 40px */
+}
+
+.metrics-card {
+    background: #e5fcf5;
+    padding: 20px 18px;  /* Reduced from 30px 25px */
+    border-radius: 6px;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.metrics-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.metrics-number {
+    font-size: clamp(28px, 4.5vw, 38px);  /* Reduced from clamp(32px, 5vw, 48px) */
+    font-weight: 700;
+    margin-bottom: 6px;  /* Reduced from 8px */
+    line-height: 1;
+}
+
+.metrics-number.projects {
+    color: #2563eb;
+}
+
+.metrics-number.technologies {
+    color: #059669;
+}
+
+.metrics-number.commits {
+    color: #7c3aed;
+}
+
+.metrics-number.experience {
+    color: #dc2626;
+}
+
+.metrics-label {
+    color: #374151;
+    font-weight: 600;
+    font-size: clamp(14px, 2.2vw, 16px);  /* Reduced from clamp(16px, 2.5vw, 18px) */
+    margin-bottom: 5px;  /* Reduced from 6px */
+}
+
+.metrics-description {
+    color: #666;
+    font-size: clamp(11px, 1.6vw, 13px);  /* Reduced from clamp(12px, 1.8vw, 14px) */
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.github {
+    text-align: center;
+    margin-top: 30px;  /* Reduced from 40px */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.github img {
+    max-width: 90%;  /* Scale down GitHub chart */
+    height: auto;
+}
+
+.github:hover {
+    transform: scale(1.1);  /* Reduced from 1.2 */
+}
+
+.metrics-status {
+    text-align: center;
+    margin-top: 30px;  /* Reduced from 40px */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.status-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #e5fcf5;
+    padding: 10px 18px;  /* Reduced from 12px 20px */
+    border-radius: 6px;
+}
+
+.status-indicator:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.status-dot {
+    width: 8px;  /* Reduced from 10px */
+    height: 8px;  /* Reduced from 10px */
+    background: #10b981;
+    border-radius: 50%;
+}
+
+.status-text {
+    color: #374151;
+    font-weight: 500;
+    font-size: clamp(13px, 1.8vw, 14px);  /* Reduced from clamp(14px, 2vw, 16px) */
+}
+
+@media (max-width: 768px) {
+    .metricspage {
+        margin: 60px auto 50px;
+        padding: 0 20px;
+    }
+    
+    .metricspageheadings {
+        margin-bottom: 24px;
+        text-align: center;
+    }
+    
+    .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        margin-bottom: 24px;
+    }
+    
+    .metrics-card {
+        padding: 16px 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .metricspage {
+        margin: 40px auto 40px;
+        padding: 0 16px;
+    }
+    
+    .metricspageheadings {
+        margin-bottom: 20px;
+    }
+    
+    .metrics-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+}
+
+.metrics-status {
+    visibility: visible !important;
+    display: block !important;
+}

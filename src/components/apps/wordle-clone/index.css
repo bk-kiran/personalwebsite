@@ -1,0 +1,135 @@
+.wordle-app-body {
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  transition: color 0.3s ease;
+  color: #1f2937;
+}
+
+body.dark-mode .wordle-app-body {
+  color: #e5e7eb;
+}
+
+.wordle-app-body h1 {
+  font-size: clamp(18px, 2.5vw, 24px);
+  padding: 16px 0;
+  border-bottom: 1px solid #e5e7eb;
+  margin: 0 0 24px 0;
+  color: #1f2937;
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-weight: 700;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+body.dark-mode .wordle-app-body h1 {
+  color: #ffffff;
+  border-bottom-color: #2a2a2a;
+}
+
+.wordle-controls {
+  margin-bottom: 20px;
+}
+
+.wordle-btn {
+  padding: 8px 16px;
+  margin: 0 4px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease;
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.wordle-btn:hover {
+  background: #e5e7eb;
+}
+
+.wordle-btn.active {
+  background: #6aaa64;
+  color: white;
+}
+
+.wordle-btn-primary {
+  background: #7CB9E8;
+  color: white;
+}
+
+.wordle-btn-primary:hover {
+  background: #5a9fd8;
+}
+
+.wordle-btn-secondary {
+  background: #374151;
+  color: white;
+}
+
+.wordle-btn-secondary:hover {
+  background: #1f2937;
+}
+
+body.dark-mode .wordle-btn {
+  background: #2a2a2a;
+  color: #b3b3b3;
+}
+
+body.dark-mode .wordle-btn:hover {
+  background: #333333;
+  color: #ffffff;
+}
+
+body.dark-mode .wordle-btn.active {
+  background: #6aaa64;
+  color: white;
+}
+
+body.dark-mode .wordle-btn-primary {
+  background: #ff1b6b;
+}
+
+body.dark-mode .wordle-btn-primary:hover {
+  background: #ff006e;
+}
+
+.wordle-loading {
+  color: #666;
+  font-size: 14px;
+  padding: 20px;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .wordle-loading {
+  color: #b3b3b3;
+}
+
+.row {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.row > div {
+  display: block;
+  width: 48px;
+  height: 48px;
+  border: 2px solid #d1d5db;
+  margin: 3px;
+  text-align: center;
+  line-height: 48px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.8em;
+  transition: all 0.3s ease;
+  background: white;
+  color: #1f2937;
+}
+
+body.dark-mode .row > div {
+  border-color: #2a2a2a;
+  background: #0a0a0a;
+  color: #ffffff;
+}

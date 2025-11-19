@@ -1,16 +1,17 @@
 .experiencepage {
     position: relative;
     z-index: 1;
-    max-width: 1200px;
-    margin: 100px auto 300px;
+    max-width: 1000px;
+    margin: 80px auto 200px;
     padding: 0 16px; 
     display: grid;
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 20px;
 }
 
 .experiencepageheadings {
     margin-bottom: 48px;
+    text-align: center;
 }
 
 .experiencepageheadings p {
@@ -21,160 +22,242 @@
 .experiencepageheadings h2 {
     animation: experience-fade-in-text 2s 1s both;
     animation-timeline: view(10px);
-    font-size: clamp(24px, 4vw, 30px);
+    font-size: clamp(20px, 4vw, 30px);
+    color: #1f2937;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    transition: color 0.3s ease;
+    margin-top: 4px;
+    margin-bottom: 0;
+}
+
+body.dark-mode .experiencepageheadings h2 {
+    color: #ffffff;
+}
+
+.page-enter {
+    animation: fade-up 1.5s 0.5s backwards;
 }
 
 .experiencepagetitle {
     color: #7CB9E8;
     font-weight: 700;
     letter-spacing: 0.06em;
-    font-size: clamp(12px, 2.2vw, 18px);
+    font-size: clamp(9px, 1.6vw, 14px);
     margin: 0;
+    margin-bottom: 0;
     opacity: 0;
     transform: translateY(10px);
     animation: about-fade-in-text 2s 1s both;
     animation-timeline: view(10px);
+    transition: color 0.3s ease;
+}
+
+body.dark-mode .experiencepagetitle {
+    color: #ff1b6b;
 }
 
 .timeline {
     position: relative;
     max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #7CB9E8 0%, #5a9fd8 50%, #7CB9E8 100%);
+    top: 0;
+    left: 50%;
+    margin-left: -2px;
+    z-index: 1;
+    border-radius: 2px;
+    transition: background 0.3s ease;
+}
+
+body.dark-mode .timeline::before {
+    background: linear-gradient(180deg, #ff1b6b 0%, #ff006e 50%, #ff1b6b 100%);
 }
 
 .timelineleftcontainer {
-    padding: 10px 50px;
+    padding: 0 50px 40px 0;
     position: relative;
     width: 50%;
-    left: 0;  
+    left: 0;
+    animation: slideInLeft 0.6s ease-out;
 }
 
 .timelinerightcontainer {
-    padding: 10px 50px;
+    padding: 0 0 40px 50px;
     position: relative;
     width: 50%;
     left: 50%;
+    animation: slideInRight 0.6s ease-out;
 }
 
-.timelineleftcontainer img {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 10%;
-    right: -20px;
-    top: 32px;
-    z-index: 10;
-    transition: 0.5s ease;
-    cursor: pointer;
-    animation: experience-fade-in-text 3s 0.2s both;
-    animation-timeline: view(10px);
-}
-
-.timelineleftcontainer img:hover{
-    transform: scale(1.4);
-}
-
+.timelineleftcontainer img,
 .timelinerightcontainer img {
     position: absolute;
     width: 50px;
     height: 50px;
     object-fit: cover;
-    border-radius: 10%;
-    left: -20px;
-    top: 32px;
+    border-radius: 50%;
     z-index: 10;
-    transition: 0.5s ease;
+    transition: all 0.3s ease;
     cursor: pointer;
-    animation: experience-fade-in-text 3s 0.2s both;
-    animation-timeline: view(10px);
+    border: 3px solid #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background: #ffffff;
 }
 
+.timelineleftcontainer img {
+    right: -25px;
+    top: 20px;
+}
+
+.timelinerightcontainer img {
+    left: -25px;
+    top: 20px;
+}
+
+.timelineleftcontainer img:hover,
 .timelinerightcontainer img:hover {
-    transform: scale(1.4);
+    transform: scale(1.15);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+body.dark-mode .timelineleftcontainer img,
+body.dark-mode .timelinerightcontainer img {
+    border-color: #1a1a1a;
+    background: #1a1a1a;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 .timelinetextbox {
-    padding: 20px 30px;
+    padding: 20px 24px;
     position: relative;
-    background: #e5fcf5;
-    border-radius: 6px;
-    font-size: clamp(14px, 2vw, 16px);
-    animation: experience-fade-in-text 2s 0.2s both;
-    animation-timeline: view(10px);
+    background: #ffffff;
+    border-radius: 12px;
+    font-size: clamp(12px, 1.8vw, 14px);
+    color: #374151;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.timelinetextbox:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+body.dark-mode .timelinetextbox {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    color: #b3b3b3;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .timelinetextbox:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+    border-color: #333333;
 }
 
 .timelinetextbox h3 {
-    font-weight: 600;
-    font-size: clamp(16px, 2.5vw, 20px);
+    font-weight: 700;
+    font-size: clamp(15px, 2.2vw, 18px);
     margin-bottom: 8px;
-    animation: experience-fade-in-text 3s 0.2s both;
-    animation-timeline: view(10px);
+    color: #1f2937;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    transition: color 0.3s ease;
+    line-height: 1.3;
 }
 
-.timelinetextbox p {
-    margin-bottom: 15px;
-    line-height: 1.6;
-    animation: experience-fade-in-text 3s 0.2s both;
-    animation-timeline: view(10px);
+body.dark-mode .timelinetextbox h3 {
+    color: #ffffff;
 }
 
 .timelinetextbox small {
     display: inline-block;
-    margin-bottom: 15px;
-    font-size: clamp(12px, 1.8vw, 14px);
-    color: #666;
-    font-weight: 500;
-    animation: experience-fade-in-text 3s 0.2s both;
-    animation-timeline: view(10px);
+    margin-bottom: 12px;
+    font-size: clamp(11px, 1.6vw, 13px);
+    color: #7CB9E8;
+    font-weight: 600;
+    padding: 4px 12px;
+    background: rgba(124, 185, 232, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .timelinetextbox small {
+    color: #ff1b6b;
+    background: rgba(255, 27, 107, 0.15);
+}
+
+.timelinetextbox p {
+    margin-bottom: 12px;
+    line-height: 1.6;
+    color: #374151;
+    transition: color 0.3s ease;
+}
+
+body.dark-mode .timelinetextbox p {
+    color: #b3b3b3;
 }
 
 .timelinetextbox ul {
-    animation: experience-fade-in-text 3s 0.2s both;
-    animation-timeline: view(10px);
     padding-left: 20px;
+    margin-top: 8px;
 }
 
 .timelinetextbox li {
-    margin-bottom: 8px;
-    line-height: 1.5;
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: #374151;
+    transition: color 0.3s ease;
 }
 
-.timeline::after {
-    content: '';
-    position: absolute;
-    width: 6px;
-    height: 100%;
-    background-color: #2a4d69;
-    top: 0%;
-    left: 50%;
-    margin-left: -3px;
-    z-index: -1;
-    animation: experience-fade-in-text 3s both;
-    animation-timeline: view(10px);
+body.dark-mode .timelinetextbox li {
+    color: #b3b3b3;
 }
 
-.left-timelinetextbox-arrow {
-    height: 0;
-    width: 0;
-    position: absolute;
-    top: 28px;
-    z-index: 1;
-    border-top: 15px solid transparent;
-    border-bottom: 15px solid transparent;
-    border-left: 15px solid #e5fcf5;
-    right: -15px;
+.timelinetextbox li strong {
+    color: #1f2937;
+    font-weight: 600;
 }
 
+body.dark-mode .timelinetextbox li strong {
+    color: #ffffff;
+}
+
+.left-timelinetextbox-arrow,
 .right-timelinetextbox-arrow {
-    height: 0;
-    width: 0;
-    position: absolute;
-    top: 28px;
-    z-index: 1;
-    border-top: 15px solid transparent;
-    border-bottom: 15px solid transparent;
-    border-right: 15px solid #e5fcf5;
-    left: -15px;
+    display: none;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 @media (max-width: 768px) {
@@ -190,51 +273,42 @@
     
     .timeline {
         position: relative;
+        padding: 20px 0;
+    }
+    
+    .timeline::before {
+        left: 0;
+        margin-left: -2px;
     }
     
     .timelineleftcontainer,
     .timelinerightcontainer {
         width: 100%;
         left: 0;
-        padding: 20px 0 20px 60px;
+        padding: 0 0 40px 50px;
     }
     
     .timelineleftcontainer img,
     .timelinerightcontainer img {
         left: -25px;
         right: auto;
-        width: 40px;
-        height: 40px;
-        top: 25px;
+        width: 45px;
+        height: 45px;
+        top: 20px;
     }
     
     .timelineleftcontainer img:hover,
     .timelinerightcontainer img:hover {
-        transform: scale(1.2);
-    }
-    
-    .timeline::after {
-        left: 0;
-        margin-left: -3px;
-    }
-    
-    .left-timelinetextbox-arrow,
-    .right-timelinetextbox-arrow {
-        left: -15px;
-        right: auto;
-        border-left: 15px solid #e5fcf5;
-        border-right: none;
-        border-top: 15px solid transparent;
-        border-bottom: 15px solid transparent;
+        transform: scale(1.1);
     }
     
     .timelinetextbox {
-        padding: 20px;
-        font-size: 15px;
+        padding: 18px 20px;
+        font-size: 14px;
     }
     
     .timelinetextbox h3 {
-        font-size: 18px;
+        font-size: 17px;
     }
 }
 
@@ -249,17 +323,22 @@
         margin-bottom: 24px;
     }
     
+    .timeline::before {
+        left: 0;
+        margin-left: -2px;
+    }
+    
     .timelineleftcontainer,
     .timelinerightcontainer {
-        padding: 15px 0 15px 50px;
+        padding: 0 0 35px 45px;
     }
     
     .timelineleftcontainer img,
     .timelinerightcontainer img {
-        width: 35px;
-        height: 35px;
+        width: 40px;
+        height: 40px;
         left: -20px;
-        top: 20px;
+        top: 18px;
     }
     
     .timelineleftcontainer img:hover,
@@ -269,7 +348,7 @@
     
     .timelinetextbox {
         padding: 16px;
-        font-size: 14px;
+        font-size: 13px;
     }
     
     .timelinetextbox h3 {
@@ -278,13 +357,14 @@
     }
     
     .timelinetextbox p {
-        font-size: 14px;
-        margin-bottom: 12px;
+        font-size: 13px;
+        margin-bottom: 10px;
     }
     
     .timelinetextbox small {
-        font-size: 12px;
-        margin-bottom: 10px;
+        font-size: 11px;
+        margin-bottom: 8px;
+        padding: 3px 10px;
     }
     
     .timelinetextbox ul {
@@ -292,16 +372,8 @@
     }
     
     .timelinetextbox li {
-        font-size: 14px;
-        margin-bottom: 6px;
-    }
-    
-    .left-timelinetextbox-arrow,
-    .right-timelinetextbox-arrow {
-        border-left-width: 12px;
-        border-top-width: 12px;
-        border-bottom-width: 12px;
-        top: 22px;
+        font-size: 13px;
+        margin-bottom: 8px;
     }
 }
 
@@ -311,20 +383,26 @@
         padding: 0 12px;
     }
     
+    .timeline::before {
+        width: 3px;
+        margin-left: -1.5px;
+    }
+    
     .timelineleftcontainer,
     .timelinerightcontainer {
-        padding: 12px 0 12px 40px;
+        padding: 0 0 30px 35px;
     }
     
     .timelineleftcontainer img,
     .timelinerightcontainer img {
-        width: 30px;
-        height: 30px;
+        width: 35px;
+        height: 35px;
         left: -17px;
+        top: 15px;
     }
     
     .timelinetextbox {
-        padding: 12px;
+        padding: 14px;
     }
     
     .timelinetextbox h3 {
@@ -333,12 +411,11 @@
     
     .timelinetextbox p,
     .timelinetextbox li {
-        font-size: 13px;
+        font-size: 12px;
     }
     
-    .timeline::after {
-        width: 4px;
-        margin-left: -2px;
+    .timelinetextbox small {
+        font-size: 10px;
     }
 }
 
@@ -354,7 +431,7 @@
     
     .timelineleftcontainer,
     .timelinerightcontainer {
-        padding: 12px 0 12px 50px;
+        padding: 0 0 30px 50px;
     }
 }
 

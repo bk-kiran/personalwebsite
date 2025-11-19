@@ -1,139 +1,117 @@
 .aboutpage {
-    position: relative;
-    z-index: 1;
-    max-width: 1200px;
-    margin: 100px auto 300px;
-    padding: 0 16px; 
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 80px auto 50px;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
 }
 
 .aboutpagecontent {
-    display: block;
-}
-
-.aboutpagetitle {
-    color: #7CB9E8;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    font-size: clamp(12px, 2.2vw, 18px);
-    margin: 0;
-    opacity: 0;
-    transform: translateY(10px);
-    animation: about-fade-in-text 2s 1s both;
-    animation-timeline: view(10px);
-}
-
-.aboutpagecaption {
-    font-size: clamp(14px, 3vw, 16px);
-    margin: 0;
-    opacity: 0;
-    transform: translateY(10px);
-    animation: about-fade-in-text 2s 1s both;;
-    animation-timeline: view(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .aboutpageimage {
-    display: block;
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    border-radius: 12px;
-    object-fit: cover;
-    opacity: 0;
-    transform: translateY(16px);
-    animation: about-fade-up 3s 0.5s both;
-    animation-timeline: view(1px);
+  display: block;
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  opacity: 1;
+  transform: none;
 }
 
 .aboutpagetext {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;  /* Reduced from 18px */
 }
 
-.aboutpagetext p {
-    opacity: 0;
-    transform: translateY(10px);
-    animation: about-fade-in-text 2s 1s both;;
-    animation-timeline: view(10px);
+.aboutpagetitle {
+  color: #7CB9E8;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  font-size: clamp(9px, 1.6vw, 12px);
+  margin: 0;
+  opacity: 1;
+  transform: none;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .aboutpagetitle {
+  color: #ff1b6b;
 }
 
 .aboutpagetext h2 {
-    font-size: clamp(20px, 5vw, 27px);
-    line-height: 1.15;
-    margin: 0;
+  font-size: clamp(18px, 4vw, 26px);
+  line-height: 1.2;
+  margin: 0;
+  opacity: 1;
+  transform: none;
+  color: #1f2937;
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .aboutpagetext h2 {
+  color: #ffffff;
+}
+
+.aboutpagecaption {
+  font-size: clamp(12px, 2vw, 14px);
+  margin: 0;
+  color: #222;
+  opacity: 1;
+  transform: none;
+  line-height: 1.5;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .aboutpagecaption {
+  color: #b3b3b3;
+}
+
+.page-enter {
+  animation: fade-up 1.2s ease-out 0.2s both;
+}
+
+@keyframes fade-up {
+  from {
     opacity: 0;
-    transform: translateY(12px);
-    animation: about-fade-in-text 2s 1s both;;
-    animation-timeline: view(10px);
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-@media (min-width: 640px) {
-    .aboutpage { 
-        gap: 32px; 
-        padding: 0 24px; 
-    }
-}
+@media (max-width: 900px) {
+  .aboutpage {
+    grid-template-columns: 1fr;
+    margin: 40px auto 40px;
+    gap: 20px;
+  }
 
-@media (min-width: 1024px) {
-    .aboutpage {
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-        gap: 40px;
-    }
-    .aboutpageimage { 
-        max-width: none; 
-    }
-}
+  .aboutpagecontent {
+    order: -1;
+  }
 
-@supports not (animation-timeline: view()) {
-    .aboutpageimage,
-    .aboutpagetext h2,
-    .aboutpagecaption,
-    .aboutpagetitle,
-    .aboutpagetext p {
-        animation-timeline: auto;
-        animation-delay: 100ms;
-    }
-}
+  .aboutpageimage {
+    max-width: 280px;
+  }
 
-@media (prefers-reduced-motion: reduce) {
-    .aboutpageimage,
-    .aboutpagetext h2,
-    .aboutpagecaption,
-    .aboutpagetitle,
-    .aboutpagetext p {
-        animation: none;
-        animation-timeline: none;
-        opacity: 1;
-        transform: none;
-    }
-}
-
-@keyframes about-fade-up {
-    to {
-        scale: 1;
-        opacity: 1;
-    }
-}
-
-@keyframes about-fade-in-text {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-    0%{
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-        transform: translateY();
-    }
-    100%{
-        transform: translateY();
-    }
+  .aboutpagetext {
+    text-align: left;
+  }
 }

@@ -31,11 +31,9 @@ import keras from '../../assets/keras.png'
 import hf from '../../assets/hf.png'
 import pt from '../../assets/pytorch.png'
 
-
-
 const Hero = () => {
   return (
-    <section className='hero'>
+    <section className='hero page-enter'>
         <div className='content'>
             <h1 className="title">Hi, I'm <span className='titlename'>Kiran</span> 👋</h1>
             <p className="caption"><strong>Hi I'm Kiran BK!</strong> An Honors Computer Science Junior studying at the University of Massachusetts Amherst📍</p>
@@ -68,17 +66,9 @@ const Hero = () => {
                 <img src={hf} className='techstack'/>
                 <img src={pt} className='techstack'/>
                 <img src={git} className='techstack'/>
-
             </div>
-
         </div>
         <img src={updatedprofilepic} alt="ProfilePic" className='heroimage'/>
-        
-
-    
-
-
-
     </section>
   )
 }

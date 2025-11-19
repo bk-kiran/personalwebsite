@@ -1,0 +1,210 @@
+.app-wrapper {
+    min-height: calc(100vh - 60px);
+    padding-top: 80px;
+    padding-bottom: 60px;
+}
+
+.app-header {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 0 24px;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    color: #7CB9E8;
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 24px;
+    transition: all 0.3s ease;
+}
+
+.back-link:hover {
+    color: #5a9fd8;
+    transform: translateX(-4px);
+}
+
+.app-title-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.app-icon-large {
+    font-size: 64px;
+    flex-shrink: 0;
+}
+
+.app-title {
+    font-size: clamp(28px, 5vw, 42px);
+    margin: 0 0 8px 0;
+    color: #1f2937;
+}
+
+.app-subtitle {
+    font-size: clamp(16px, 2.5vw, 18px);
+    color: #6b7280;
+    margin: 0 0 16px 0;
+    line-height: 1.6;
+}
+
+.app-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.app-category-badge {
+    background: #7CB9E8;
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.github-link {
+    color: #7CB9E8;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.github-link:hover {
+    color: #5a9fd8;
+}
+
+.app-features {
+    background: #f9fafb;
+    padding: 20px 24px;
+    border-radius: 12px;
+    margin-top: 24px;
+}
+
+.app-features h3 {
+    margin: 0 0 12px 0;
+    font-size: 18px;
+    color: #1f2937;
+}
+
+.app-features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 8px;
+}
+
+.app-features li {
+    color: #4b5563;
+    font-size: 15px;
+}
+
+.app-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.app-not-found,
+.app-coming-soon {
+    text-align: center;
+    padding: 80px 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.app-not-found h2,
+.app-coming-soon h2 {
+    font-size: 32px;
+    margin-bottom: 16px;
+    color: #1f2937;
+}
+
+.app-not-found p,
+.app-coming-soon p {
+    font-size: 18px;
+    color: #6b7280;
+    margin-bottom: 24px;
+}
+
+.back-btn {
+    display: inline-block;
+    background: #7CB9E8;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: #5a9fd8;
+    transform: translateY(-2px);
+}
+
+/* Dark mode */
+body.dark-mode .app-title {
+    color: #e5e7eb;
+}
+
+body.dark-mode .app-subtitle {
+    color: #9ca3af;
+}
+
+body.dark-mode .app-features {
+    background: #2d2d2d;
+}
+
+body.dark-mode .app-features h3 {
+    color: #e5e7eb;
+}
+
+body.dark-mode .app-features li {
+    color: #d1d5db;
+}
+
+body.dark-mode .app-not-found h2,
+body.dark-mode .app-coming-soon h2 {
+    color: #e5e7eb;
+}
+
+body.dark-mode .app-not-found p,
+body.dark-mode .app-coming-soon p {
+    color: #9ca3af;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .app-wrapper {
+        padding-top: 70px;
+    }
+
+    .app-title-section {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .app-icon-large {
+        font-size: 48px;
+    }
+
+    .app-meta {
+        justify-content: center;
+    }
+
+    .app-features ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+.page-enter {
+    animation: fade-up 1.5s 0.5s backwards;
+}

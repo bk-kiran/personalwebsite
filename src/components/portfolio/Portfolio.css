@@ -1,77 +1,112 @@
 .portfoliopage {
     position: relative;
-    margin-top: 100px;
+    margin-top: 80px;
     z-index: 1;
-    margin-left: 15%;
-    margin-right: 10%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
     display: flex;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     flex-direction: column;
 }
 
-.portfoliopageheadings p {
-    animation: portfolio-fade-in-text 2s 1s both;
-    animation-timeline: view(10px);
+.portfoliopageheadings {
+    margin-bottom: 0;
+    text-align: center;
 }
 
 .portfoliopageheadings h2 {
-    animation: portfolio-fade-in-text 2s 1s both;
-    animation-timeline: view(10px);
-    font-size: clamp(24px, 4vw, 30px);
+    font-size: clamp(18px, 3.5vw, 26px);
+    color: #1f2937;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    transition: color 0.3s ease;
+    margin-top: 4px;
+    margin-bottom: 0;
+}
+
+body.dark-mode .portfoliopageheadings h2 {
+    color: #ffffff;
+}
+
+.page-enter {
+    animation: fade-up 1.5s 0.5s backwards;
 }
 
 .porfoliopagetitle {
     color: #7CB9E8;
-    font-weight: bold;
-    margin-right: 25%;
+    font-weight: 700;
+    font-size: clamp(9px, 1.6vw, 12px);
+    letter-spacing: 0.06em;
+    transition: color 0.3s ease;
+    margin-bottom: 0;
+    margin-right: 0;
+}
+
+body.dark-mode .porfoliopagetitle {
+    color: #ff1b6b;
 }
 
 .porfoliopagecaption{
-    color: red;
-    font-weight: bold;
+    color: #1f2937;
+    font-weight: 700;
     margin-right: 25%;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-size: clamp(18px, 3.5vw, 26px);
+    letter-spacing: -0.02em;
+    transition: color 0.3s ease;
+}
+
+body.dark-mode .porfoliopagecaption {
+    color: #ffffff;
 }
 
 .project1{
     position: relative;
-    margin-top: 50px;
-    margin-bottom: 100px;
-}
-
-.project1 p {
-    animation: portfolio-fade-in-text 2s 1s both;
-    animation-timeline: view(10px);
-}
-
-.project1 h1 {
-    animation: portfolio-fade-in-text 2s 1s both;
-    animation-timeline: view(10px);
+    margin-top: 30px;
+    margin-bottom: 50px;
 }
 
 .project1screenshot {
-    width: 45%;
+    width: 32%;
     float: left;
-    margin-right: 50px;
-    border-radius: 40px;
+    margin-right: 28px;
+    border-radius: 16px;
     transition: 0.5s ease;
     cursor: pointer;
-    scale: .8;
-    opacity: 0;
-    animation: portfolio-fade-up 3s 0.5s both;
-    animation-timeline: view(1px);
+    scale: .9;
+    opacity: 1;
 }
 
 .project1screenshot:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);  /* Reduced from 1.1 */
 }
 
 .project1title {
-    font-weight: bold;
-    margin-left: 50px;
+    font-weight: 600;
+    margin-left: 28px;
+    font-size: clamp(16px, 2.5vw, 20px);
+    color: #1f2937;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    transition: color 0.3s ease;
+}
+
+body.dark-mode .project1title {
+    color: #ffffff;
 }
 
 .project1caption {
-    font-size: 15px;
+    font-size: clamp(12px, 1.8vw, 14px);
+    line-height: 1.5;
+    color: #374151;
+    margin-left: 28px;
+    transition: color 0.3s ease;
+}
+
+body.dark-mode .project1caption {
+    color: #b3b3b3;
 }
 
 .projecttag1 {
@@ -104,49 +139,261 @@
 
 .project2{
     position: relative;
-    margin-top: 50px;
-    margin-bottom: 100px;
-}
-
-.project2 p {
-    animation: portfolio-fade-in-text 2s 1s both;
-    animation-timeline: view(10px);
-}
-
-.project2 h1 {
-    animation: portfolio-fade-in-text 2s 1s both;
-    animation-timeline: view(10px);
+    margin-top: 30px;
+    margin-bottom: 50px;
 }
 
 .project2screenshot {
-    width: 45%;
+    width: 32%;
     float: right;
-    margin-left: 50px;
-    border-radius: 40px;
+    margin-left: 28px;
+    border-radius: 16px;
     transition: 0.5s ease;
     cursor: pointer;
-    scale: .8;
-    opacity: 0;
-    animation: portfolio-fade-up 3s 0.5s both;
-    animation-timeline: view(1px);
+    scale: .9;
+    opacity: 1;
 }
 
 .project2screenshot:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);  /* Reduced from 1.1 */
 }
 
 .project2title {
-    font-weight: bold;
-    margin-right: 50px;
+    font-weight: 600;
+    margin-right: 28px;
+    font-size: clamp(16px, 2.5vw, 20px);
+    color: #1f2937;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    transition: color 0.3s ease;
+}
+
+body.dark-mode .project2title {
+    color: #ffffff;
 }
 
 .project2caption {
-    font-size: 15px;
-    margin-right: 50px;
+    font-size: clamp(12px, 1.8vw, 14px);
+    margin-right: 28px;
+    line-height: 1.5;
+    color: #374151;
+    transition: color 0.3s ease;
 }
 
-.viewcodedemo:hover {
-    color: black;
+body.dark-mode .project2caption {
+    color: #b3b3b3;
+}
+
+.portfolio-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    margin-top: 32px;
+    margin-bottom: 40px;
+}
+
+.search-bar {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #777;
+  pointer-events: none;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .search-icon {
+  color: #666;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 16px;
+    font-size: 14px;
+    padding-left: 36px; 
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.3s ease;
+    color: #1f2937;
+}
+
+.search-input::placeholder {
+    color: #9ca3af;
+}
+
+.search-input:focus {
+    border-color: #7CB9E8;
+    box-shadow: 0 0 0 3px rgba(124, 185, 232, 0.1);
+}
+
+body.dark-mode .search-input {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    color: #ffffff;
+}
+
+body.dark-mode .search-input::placeholder {
+    color: #666;
+}
+
+body.dark-mode .search-input:focus {
+    border-color: #ff1b6b;
+    box-shadow: 0 0 0 3px rgba(255, 27, 107, 0.1);
+    background: #222222;
+}
+
+.category-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+
+.category-btn {
+    padding: 6px 16px;
+    background: #f3f4f6;
+    border: 2px solid transparent;
+    border-radius: 18px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #374151;
+}
+
+.category-btn:hover {
+    background: #e5e7eb;
+}
+
+.category-btn.active {
+    background: #7CB9E8;
+    color: white;
+    border-color: #7CB9E8;
+}
+
+body.dark-mode .category-btn {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    color: #b3b3b3;
+}
+
+body.dark-mode .category-btn:hover {
+    background: #222222;
+    border-color: #333333;
+    color: #ffffff;
+}
+
+body.dark-mode .category-btn.active {
+    background: linear-gradient(135deg, #ff1b6b, #ff006e);
+    color: white;
+    border-color: transparent;
+}
+
+.project-links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+.project1-links {
+    margin-left: 28px;
+}
+
+.project2-links {
+    margin-right: 28px;
+}
+
+.project1-tags {
+    margin-left: 28px;
+}
+
+.project2-tags {
+    margin-right: 28px;
+}
+
+.github-link-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    color: #374151;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.github-link-wrapper:hover {
+    color: #1f2937;
+}
+
+.project-github-icon {
+    font-size: 18px;
+    color: #222;
+    transition: all 0.2s ease;
+}
+
+.github-link-wrapper:hover .project-github-icon {
+    transform: scale(1.1);
+}
+
+body.dark-mode .github-link-wrapper {
+    color: #b3b3b3;
+}
+
+body.dark-mode .github-link-wrapper:hover {
+    color: #ffffff;
+}
+
+body.dark-mode .project-github-icon {
+    color: #b3b3b3;
+}
+
+body.dark-mode .github-link-wrapper:hover .project-github-icon {
+    color: #ffffff;
+}
+
+.demo-btn {
+    background: linear-gradient(135deg, #ff1b6b, #ff006e);
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.demo-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 27, 107, 0.3);
+}
+
+body.dark-mode .demo-btn {
+    background: linear-gradient(135deg, #ff1b6b, #ff006e);
+}
+
+.no-results {
+    text-align: center;
+    padding: 60px 20px;
+    color: #9ca3af;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+body.dark-mode .no-results {
+    color: #666;
 }
 
 @keyframes portfolio-fade-up {
@@ -156,21 +403,13 @@
     }
 }
 
-@keyframes portfolio-fade-in-text {
+@keyframes fade-up {
     from {
         opacity: 0;
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
-    }
-    0%{
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-        transform: translateY();
-    }
-    100%{
-        transform: translateY();
+        transform: translateY(0);
     }
 }

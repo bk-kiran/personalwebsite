@@ -1,4 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faSearchengin } from '@fortawesome/free-brands-svg-icons'
 import './Portfolio.css'
 import waproject from '../../assets/whatsapp.webp'
 import djproject from '../../assets/stocks.jpeg'
@@ -11,111 +14,209 @@ import fantasypl from '../../assets/FantasyPL.png'
 import summafy from '../../assets/Summafy.png'
 
 const Portfolio = () => {
+  const [searchTerm, setSearchTerm] = useState('')
+  const [selectedCategory, setSelectedCategory] = useState('All Projects')
+
+  const projects = [
+    {
+      id: 1,
+      title: 'Fantasy EPL Player Finder ⚽🔍',
+      description: 'Search, compare, and analyze 500+ soccer players with ease. Featuring an interactive React.js frontend with real-time filters and a Spring Boot + PostgreSQL backend, it handles 5K+ concurrent users while ensuring sub-500ms response times through optimized queries and RESTful APIs.',
+      image: fantasypl,
+      tags: ['#springboot', '#reactjs', '#postgresql'],
+      githubUrl: 'https://github.com/bk-kiran/FantasyPL-DataHub-24-25-',
+      demoUrl: '#',
+      category: 'Web Development',
+      featured: true
+    },
+    {
+      id: 2,
+      title: 'Finance Hive 💰',
+      description: 'An AI-powered personal finance assistant app for iOS that blends budgeting, stock tracking, simulations, and gamified learning. Built with Swift + SwiftUI in an MVVM architecture, Finance Hive features Finbot (AI assistant), a personalized dashboard, and community-driven challenges to make finance approachable and fun.',
+      image: financehive,
+      tags: ['#swift', '#mvvm', '#ai'],
+      githubUrl: 'https://github.com/Saipulavarthy/FinanceHive',
+      demoUrl: '#',
+      category: 'AI/ML',
+      featured: true
+    },
+    {
+      id: 3,
+      title: 'AI Resume Analyzer 📑🤖',
+      description: 'Ace the resume screen with this AI-powered analyzer! Built with React.js and Claude APIs, it achieves 92% ATS accuracy and reduces feedback latency by 40% through prompt-engineered NLP pipelines. Securely processes 100+ resumes in parallel with Puter.js serverless auth and encrypted storage, delivering faster and more consistent feedback.',
+      image: resumeister,
+      tags: ['#react', '#nlp', '#puterjs'],
+      githubUrl: 'https://github.com/bk-kiran/ai_resume_analyzer',
+      demoUrl: '#',
+      category: 'AI/ML',
+      featured: false
+    },
+    {
+      id: 4,
+      title: 'Summafy 📰',
+      description: 'Stay informed in seconds. Summafy is a clean Chrome extension that extracts the main content from any article and generates concise AI-powered summaries using Google Gemini. Designed with a focus on clarity and usability, it transforms long reads into quick takeaways.',
+      image: summafy,
+      tags: ['#javascript', '#geminiai', '#chromewebextension'],
+      githubUrl: 'https://github.com/bk-kiran/Summafy',
+      demoUrl: '#',
+      category: 'AI/ML',
+      featured: false
+    },
+    {
+      id: 5,
+      title: 'VGameFinder 2.0 🕹️',
+      description: 'Looking for your next video game adventure? Use VGameFinder 2.0 to discover over 3,000 game entries and recieve personalized recommendations based on your previous plays! The front-end application was architected using ReactJS, Tailwind CSS and the RAWG API. Whereas, the game recommendation system integrated pandas dataframes and scikit-learn\'s cosine similarity algorithm.',
+      image: vgamefinder,
+      tags: ['#react', '#machine learning', '#pandas'],
+      githubUrl: 'https://github.com/bk-kiran/VGameFinderFiles',
+      demoUrl: 'https://vgamefinder.kiranbk.com/',
+      category: 'AI/ML',
+      featured: false
+    },
+    {
+      id: 6,
+      title: 'Amazon Product Tracker 📦',
+      description: 'Never miss a deal with the Amazon Price Tracker! This webscraping tool allows users to securely monitor Amazon product prices in real-time and make smarter purchasing decisions. This project utilized Python, Flask, SQL and BeautifulSoup4 to create the web application, implement a robust authentication system, manage database operations and extract real-time product data from Amazon.com.',
+      image: amazonproject,
+      tags: ['#flask', '#web scraping', '#python'],
+      githubUrl: 'https://github.com/bk-kiran/AmazonProductScraper',
+      demoUrl: '#',
+      category: 'Web Development',
+      featured: false
+    },
+    {
+      id: 7,
+      title: 'WhatsApp Chat Analyser 💬',
+      description: 'Who are the nicest people in your WhatsApp Chat? Who are the most active? How often do you guys text? Find out through this WhatsApp Chat Analyser. This app utilized pandas dataframes, NLP sentiment analysis through NLTKVader and data visualization through libraries such as matplotlib and seaborn.',
+      image: waproject,
+      tags: ['#python', '#data visualization', '#NLP sentiment analysis'],
+      githubUrl: 'https://github.com/bk-kiran/whatsappchatanalyser',
+      demoUrl: 'https://whatsappchatanalyser-cnsjbvlaepxyamcaabw24q.streamlit.app/',
+      category: 'Data Science',
+      featured: false
+    },
+    {
+      id: 8,
+      title: 'Recipe Finder 🍳',
+      description: 'Need to chef something up in just 15 minutes? Are you looking to explore fascinating cuisines? Or do you just want to expand your culinary palette? Through this recipe finder, search for 500+ recipes based on cuisine, ingredients or dietary requirements! This app was built using reactjs and utilized the spoonacular API to obtain recipe information.',
+      image: foodproject,
+      tags: ['#HTML', '#CSS', '#reactjs', '#spoonacular API'],
+      githubUrl: 'https://github.com/bk-kiran/recipefinder',
+      demoUrl: 'https://drive.google.com/file/d/1UNgvQHlVNIBIbcb2FwobRH0bASfIZlQ7/view?usp=sharing',
+      category: 'Web Development',
+      featured: false
+    },
+    {
+      id: 9,
+      title: 'Predicting Stock Prices 📈',
+      description: 'Predict future stock prices of the FAAMG companies! This app was developed using streamlit, a Random Forest Regression machine learning model and utilized web scraping to obtain stock data.',
+      image: djproject,
+      tags: ['#python', '#machine learning', '#web scraping'],
+      githubUrl: 'https://github.com/bk-kiran/stockpricepredictor',
+      demoUrl: 'https://stockpricepredictor-wdukdnfvqm84pzvcmavbqe.streamlit.app/',
+      category: 'AI/ML',
+      featured: false
+    }
+  ]
+
+  const categories = ['All Projects', 'Featured', ...new Set(projects.map(project => project.category))]
+
+  const filteredProjects = projects.filter(project => {
+    const matchesSearch = project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         project.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
+    const matchesCategory = selectedCategory === 'All Projects' || 
+                           (selectedCategory === 'Featured' && project.featured) ||
+                           project.category === selectedCategory
+    return matchesSearch && matchesCategory
+  })
+
+  const handleGithubClick = (url) => {
+    if (url && url !== '#') {
+      window.open(url, '_blank')
+    }
+  }
+
+  const handleDemoClick = (url) => {
+    if (url && url !== '#') {
+      window.open(url, '_blank')
+    } else {
+      alert('Demo coming soon! 🚧')
+    }
+  }
+
   return (
-    <section className='portfoliopage' id="portfoliopage">
+    <section className='portfoliopage page-enter' id="portfoliopage">
         <div className='portfoliopageheadings'>
             <p className='porfoliopagetitle'>PROJECTS</p>
-            <br></br>
             <h2>Here is what I have been working on 💡 </h2>
         </div>
 
-        <div className='project1'>
-            <img className='project1screenshot' src={fantasypl}/>
-            <h1 className='project1title'>Fantasy EPL Player Finder ⚽🔍</h1>
-            <br></br>
-            <p className='project1caption'>Search, compare, and analyze 500+ soccer players with ease. Featuring an interactive React.js frontend with real-time filters and a Spring Boot + PostgreSQL backend, it handles 5K+ concurrent users while ensuring sub-500ms response times through optimized queries and RESTful APIs.</p>
-            <br></br>
-            <p><span className='projecttag1'>#springboot</span>&nbsp;&nbsp;&nbsp;<span className='projecttag2'>#reactjs</span>&nbsp;&nbsp;&nbsp;<span className='projecttag3'>#postgresql</span></p>
-            <br></br>
-            <p><a className='viewcodedemo' href="https://github.com/bk-kiran/FantasyPL-DataHub-24-25-" target='__blank'>Code</a>&nbsp;&nbsp;👨‍💻&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a className='viewcodedemo' href="#" target='__blank'>Live Demo</a>&nbsp;&nbsp;🖥️</p>
+        <div className='portfolio-controls'>
+          <div className='search-bar'>
+            <FontAwesomeIcon icon={faSearchengin} className="search-icon" />
+            <input
+              type='text'
+              placeholder='Search projects...'
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className='search-input'
+            />
+          </div>
+
+          <div className='category-filters'>
+            {categories.map(category => (
+              <button
+                key={category}
+                className={`category-btn ${selectedCategory === category ? 'active' : ''}`}
+                onClick={() => setSelectedCategory(category)}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
         </div>
 
-        <div className='project2'>
-            <img className='project2screenshot' src={financehive}/>
-            <h1 className='project2title'>Finance Hive 💰</h1>
-            <p className='project2caption'>An AI-powered personal finance assistant app for iOS that blends budgeting, stock tracking, simulations, and gamified learning. Built with Swift + SwiftUI in an MVVM architecture, Finance Hive features Finbot (AI assistant), a personalized dashboard, and community-driven challenges to make finance approachable and fun.</p>
-            <br></br>
-            <p><span className='projecttag4'>#swift</span>&nbsp;&nbsp;&nbsp;<span className='projecttag5'>#mvvm</span>&nbsp;&nbsp;&nbsp;<span className='projecttag6'>#ai</span></p>
-            <br></br>
-            <p><a className='viewcodedemo' href="https://github.com/Saipulavarthy/FinanceHive" target='__blank'>Code</a>&nbsp;&nbsp;👨‍💻&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a className='viewcodedemo' href="#" target='__blank'>Live Demo</a>&nbsp;&nbsp;🖥️</p>
-        </div>
+        {filteredProjects.map((project) => {
+          return (
+            <div key={project.id} className='project1'>
+              <img className='project1screenshot' src={project.image} alt={project.title} />
+              <h1 className='project1title'>{project.title}</h1>
+              <br></br>
+              <p className='project1caption'>{project.description}</p>
+              <br></br>
+              <p className='project1-tags'>
+                {project.tags.map((tag, index) => {
+                  const tagClass = `projecttag${(index % 7) + 1}`
+                  return (
+                    <span key={index} className={tagClass}>
+                      {tag}
+                      {index < project.tags.length - 1 && <>&nbsp;&nbsp;&nbsp;</>}
+                    </span>
+                  )
+                })}
+              </p>
+              <br></br>
+              <div className='project-links project1-links'>
+                <div className='github-link-wrapper' onClick={() => handleGithubClick(project.githubUrl)}>
+                  <FontAwesomeIcon icon={faGithub} className="project-github-icon" />
+                </div>
+                <button 
+                  className='demo-btn'
+                  onClick={() => handleDemoClick(project.demoUrl)}
+                >
+                  Live Demo
+                </button>
+              </div>
+            </div>
+          )
+        })}
 
-        <div className='project1'>
-            <img className='project1screenshot' src={resumeister}/>
-            <h1 className='project1title'>AI Resume Analyzer 📑🤖</h1>
-            <br></br>
-            <p className='project1caption'>Ace the resume screen with this AI-powered analyzer! Built with React.js and Claude APIs, it achieves 92% ATS accuracy and reduces feedback latency by 40% through prompt-engineered NLP pipelines. Securely processes 100+ resumes in parallel with Puter.js serverless auth and encrypted storage, delivering faster and more consistent feedback.</p>
-            <br></br>
-            <p><span className='projecttag7'>#react</span>&nbsp;&nbsp;&nbsp;<span className='projecttag1'>#nlp</span>&nbsp;&nbsp;&nbsp;<span className='projecttag3'>#puterjs</span></p>
-            <br></br>
-            <p><a className='viewcodedemo' href="https://github.com/bk-kiran/ai_resume_analyzer" target='__blank'>Code</a>&nbsp;&nbsp;👨‍💻&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a className='viewcodedemo' href="#" target='__blank'>Live Demo</a>&nbsp;&nbsp;🖥️</p>
-        </div>
-
-        <div className='project2'>
-            <img className='project2screenshot' src={summafy}/>
-            <h1 className='project2title'>Summafy 📰</h1>
-            <br></br>
-            <p className='project2caption'>Stay informed in seconds. Summafy is a clean Chrome extension that extracts the main content from any article and generates concise AI-powered summaries using Google Gemini. Designed with a focus on clarity and usability, it transforms long reads into quick takeaways.</p>
-            <br></br>
-            <p><span className='projecttag5'>#javascript</span>&nbsp;&nbsp;&nbsp;<span className='projecttag7'>#geminiai</span>&nbsp;&nbsp;&nbsp;<span className='projecttag2'>#chromewebextension</span></p>
-            <br></br>
-            <p><a className='viewcodedemo' href="https://github.com/bk-kiran/Summafy" target='__blank'>Code</a>&nbsp;&nbsp;👨‍💻&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a className='viewcodedemo' href="#" target='__blank'>Live Demo</a>&nbsp;&nbsp;🖥️</p>
-        </div>
-
-        <div className='project1'>
-            <img className='project1screenshot' src={vgamefinder}/>
-            <h1 className='project1title'>VGameFinder 2.0 🕹️</h1>
-            <br></br>
-            <p className='project1caption'>Looking for your next video game adventure? Use VGameFinder 2.0 to discover over 3,000 game entries and recieve personalized recommendations based on your previous plays! The front-end application was architected using ReactJS, Tailwind CSS and the RAWG API. Whereas, the game recommendation system integrated pandas dataframes and scikit-learn's cosine
-similarity algorithm.</p>
-            <br></br>
-            <p><span className='projecttag4'>#react</span>&nbsp;&nbsp;&nbsp;<span className='projecttag5'>#machine learning</span>&nbsp;&nbsp;&nbsp;<span className='projecttag1'>#pandas</span></p>
-            <br></br>
-            <p><a className='viewcodedemo' href="https://github.com/bk-kiran/VGameFinderFiles" target='__blank'>Code</a>&nbsp;&nbsp;👨‍💻&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a className='viewcodedemo' href="https://vgamefinder.kiranbk.com/" target='__blank'>Live Demo</a>&nbsp;&nbsp;🖥️</p>
-        </div>
-
-        <div className='project2'>
-            <img className='project2screenshot' src={amazonproject}/>
-            <h1 className='project2title'>Amazon Product Tracker 📦</h1>
-            <br></br>
-            <p className='project2caption'>Never miss a deal with the Amazon Price Tracker! This webscraping tool allows users to securely monitor Amazon product prices in real-time and make smarter purchasing decisions. This project utilized Python, Flask, SQL and BeautifulSoup4 to create the web application, implement a robust authentication system, manage database operations and extract real-time product data from Amazon.com.</p>
-            <br></br>
-            <p><span className='projecttag3'>#flask</span>&nbsp;&nbsp;&nbsp;<span className='projecttag7'>#web scraping</span>&nbsp;&nbsp;&nbsp;<span className='projecttag2'>#python</span></p>
-            <br></br>
-            <p><a className='viewcodedemo' href="https://github.com/bk-kiran/AmazonProductScraper" target='__blank'>Code</a>&nbsp;&nbsp;👨‍💻&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a className='viewcodedemo' href="#" target='__blank'>Live Demo</a>&nbsp;&nbsp;🖥️</p>
-        </div>
-
-        <div className='project1'>
-            <img className='project1screenshot' src={waproject}/>
-            <h1 className='project1title'>WhatsApp Chat Analyser 💬</h1>
-            <br></br>
-            <p className='project1caption'>Who are the nicest people in your WhatsApp Chat? Who are the most active? How often do you guys text? Find out through this WhatsApp Chat Analyser. This app utilized pandas dataframes, NLP sentiment analysis through NLTKVader and data visualization through libraries such as matplotlib and seaborn.</p>
-            <br></br>
-            <p><span className='projecttag1'>#python</span>&nbsp;&nbsp;&nbsp;<span className='projecttag2'>#data visualization</span>&nbsp;&nbsp;&nbsp;<span className='projecttag7'>#NLP sentiment analysis</span></p>
-            <br></br>
-            <p><a className='viewcodedemo' href="https://github.com/bk-kiran/whatsappchatanalyser" target='__blank'>Code</a>&nbsp;&nbsp;👨‍💻&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a className='viewcodedemo' href="https://whatsappchatanalyser-cnsjbvlaepxyamcaabw24q.streamlit.app/" target='__blank'>Live Demo</a>&nbsp;&nbsp;🖥️</p>
-        </div>
-        <div className='project2'>
-            <img className='project2screenshot' src={foodproject}/>
-            <h1 className='project2title'>Recipe Finder 🍳</h1>
-            <br></br>
-            <p className='project2caption'>Need to chef something up in just 15 minutes? Are you looking to explore fascinating cuisines? Or do you just want to expand your culinary palette? Through this recipe finder, search for 500+ recipes based on cuisine, ingredients or dietary requirements! This app was built using reactjs and utilized the spoonacular API to obtain recipe information. </p>
-            <br></br>
-            <p><span className='projecttag2'>#HTML</span>&nbsp;&nbsp;&nbsp;<span className='projecttag7'>#CSS</span>&nbsp;&nbsp;&nbsp;<span className='projecttag3'>#reactjs</span>&nbsp;&nbsp;&nbsp;<span className='projecttag1'>#spoonacular API</span></p>
-            <br></br>
-            <p><a className='viewcodedemo' href="https://github.com/bk-kiran/recipefinder" target='__blank'>Code</a>&nbsp;&nbsp;👨‍💻&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://drive.google.com/file/d/1UNgvQHlVNIBIbcb2FwobRH0bASfIZlQ7/view?usp=sharing" target='__blank' className='viewcodedemo'>Live Demo</a>&nbsp;&nbsp;🖥️</p>
-        </div>
-
-        <div className='project1'>
-            <img className='project1screenshot' src={djproject}/>
-            <h1 className='project1title'>Predicting Stock Prices 📈</h1>
-            <br></br>
-            <p className='project1caption'>Predict future stock prices of the FAAMG companies! This app was developed using streamlit, a Random Forest Regression machine learning model and utilized web scraping to obtain stock data.</p>
-            <br></br>
-            <p><span className='projecttag3'>#python</span>&nbsp;&nbsp;&nbsp;<span className='projecttag5'>#machine learning</span>&nbsp;&nbsp;&nbsp;<span className='projecttag4'>#web scraping</span></p>
-            <br></br>
-            <p><a className='viewcodedemo' href="https://github.com/bk-kiran/stockpricepredictor" target='__blank'>Code</a>&nbsp;&nbsp;👨‍💻&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://stockpricepredictor-wdukdnfvqm84pzvcmavbqe.streamlit.app/" target='__blank' className='viewcodedemo'>Live Demo</a>&nbsp;&nbsp;🖥️</p>
-        </div>
+        {filteredProjects.length === 0 && (
+          <div className='no-results'>
+            <p>No projects found matching your search.</p>
+          </div>
+        )}
 
 
 
