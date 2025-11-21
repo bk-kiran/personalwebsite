@@ -29,7 +29,7 @@ const AppsPage = () => {
       description: 'Stay focused with this productivity timer. Customize work/break intervals and track your progress!',
       icon: '⏰',
       category: 'Productivity',
-      featured: true,
+      featured: false,
       githubUrl: '#',
       hasApp: true,
     },
@@ -42,7 +42,7 @@ const AppsPage = () => {
       category: 'Developer Tools',
       featured: true,
       githubUrl: '#',
-      hasApp: false,
+      hasApp: true,
     },
   ]
 

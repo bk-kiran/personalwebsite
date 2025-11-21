@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom'
 import './AppWrapper.css'
 import WordleClone from './WordleClone'
 import PomodoroTimer from './PomodoroTimer'
+import JSONFormatter from './JSONFormatter'
 
 const AppWrapper = () => {
   const { slug } = useParams()
@@ -92,17 +93,6 @@ const AppWrapper = () => {
             </div>
           </div>
         </div>
-
-        {app.features && (
-          <div className='app-features'>
-            <h3>Features:</h3>
-            <ul>
-              {app.features.map((feature, index) => (
-                <li key={index}>✓ {feature}</li>
-              ))}
-            </ul>
-          </div>
-        )}
       </div>
 
       <div className='app-container'>
