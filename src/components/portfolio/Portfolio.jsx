@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faSearchengin } from '@fortawesome/free-brands-svg-icons'
@@ -12,12 +12,25 @@ import vgamefinder from '../../assets/vgamefinder.jpeg'
 import resumeister from '../../assets/ResuMeister.png'
 import fantasypl from '../../assets/FantasyPL.png'
 import summafy from '../../assets/Summafy.png'
+import studylensai from "../../assets/studylearnai.png"
 
 const Portfolio = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('All Projects')
+  const [animationKey, setAnimationKey] = useState(0)
 
   const projects = [
+    {
+      id: 11,
+      title: 'StudyLensAI 🎓🤖',
+      description: 'StudyLensAI is an AI-powered course management and smart study assistant platform. Built with Next.js and Convex, it enables students and educators to upload course files (PDFs), extract semantic content, and ask open-ended questions to an intelligent AI that understands class material via vector embeddings and RAG. Features include real-time chat, robust authentication, file management, and lightning-fast semantic search across all uploaded content.',
+      image: studylensai,
+      tags: ['#nextjs', '#convex', '#rag'],
+      githubUrl: 'https://github.com/bk-kiran/StudyLensAI',
+      demoUrl: '#',
+      category: 'Web Development',
+      featured: true
+    },
     {
       id: 1,
       title: 'Fantasy EPL Player Finder ⚽🔍',
@@ -131,6 +144,11 @@ const Portfolio = () => {
     return matchesSearch && matchesCategory
   })
 
+  // Trigger animation when filters change
+  useEffect(() => {
+    setAnimationKey(prev => prev + 1)
+  }, [searchTerm, selectedCategory])
+
   const handleGithubClick = (url) => {
     if (url && url !== '#') {
       window.open(url, '_blank')
@@ -177,36 +195,41 @@ const Portfolio = () => {
           </div>
         </div>
 
-        {filteredProjects.map((project) => {
+        {filteredProjects.map((project, index) => {
           return (
-            <div key={project.id} className='project1'>
-              <img className='project1screenshot' src={project.image} alt={project.title} />
-              <h1 className='project1title'>{project.title}</h1>
-              <br></br>
-              <p className='project1caption'>{project.description}</p>
-              <br></br>
-              <p className='project1-tags'>
-                {project.tags.map((tag, index) => {
-                  const tagClass = `projecttag${(index % 7) + 1}`
-                  return (
-                    <span key={index} className={tagClass}>
-                      {tag}
-                      {index < project.tags.length - 1 && <>&nbsp;&nbsp;&nbsp;</>}
-                    </span>
-                  )
-                })}
-              </p>
-              <br></br>
-              <div className='project-links project1-links'>
-                <div className='github-link-wrapper' onClick={() => handleGithubClick(project.githubUrl)}>
-                  <FontAwesomeIcon icon={faGithub} className="project-github-icon" />
+            <div 
+              key={`${project.id}-${animationKey}`} 
+              className='project1 project-fade-in'
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <div className='project-content-wrapper'>
+                <img className='project1screenshot' src={project.image} alt={project.title} />
+                <div className='project-details'>
+                  <h1 className='project1title'>{project.title}</h1>
+                  <p className='project1caption'>{project.description}</p>
+                  <p className='project1-tags'>
+                    {project.tags.map((tag, index) => {
+                      const tagClass = `projecttag${(index % 7) + 1}`
+                      return (
+                        <span key={index} className={tagClass}>
+                          {tag}
+                          {index < project.tags.length - 1 && <>&nbsp;&nbsp;&nbsp;</>}
+                        </span>
+                      )
+                    })}
+                  </p>
+                  <div className='project-links project1-links'>
+                    <div className='github-link-wrapper' onClick={() => handleGithubClick(project.githubUrl)}>
+                      <FontAwesomeIcon icon={faGithub} className="project-github-icon" />
+                    </div>
+                    <button 
+                      className='demo-btn'
+                      onClick={() => handleDemoClick(project.demoUrl)}
+                    >
+                      Live Demo
+                    </button>
+                  </div>
                 </div>
-                <button 
-                  className='demo-btn'
-                  onClick={() => handleDemoClick(project.demoUrl)}
-                >
-                  Live Demo
-                </button>
               </div>
             </div>
           )
@@ -217,8 +240,6 @@ const Portfolio = () => {
             <p>No projects found matching your search.</p>
           </div>
         )}
-
-
 
     </section>
   )

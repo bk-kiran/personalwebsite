@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons' 
@@ -9,6 +9,7 @@ const AppsPage = () => {
   const navigate = useNavigate()
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('All Apps')
+  const [animationKey, setAnimationKey] = useState(0)
 
   const apps = [
     {
@@ -56,6 +57,11 @@ const AppsPage = () => {
                            app.category === selectedCategory
     return matchesSearch && matchesCategory
   })
+
+  // Trigger animation when filters change
+  useEffect(() => {
+    setAnimationKey(prev => prev + 1)
+  }, [searchTerm, selectedCategory])
 
   const handleTryNow = (app) => {
     if (app.hasApp) {
@@ -111,8 +117,12 @@ const AppsPage = () => {
       </div>
 
       <div className='apps-grid'>
-        {filteredApps.map(app => (
-          <div key={app.id} className='app-card'>
+        {filteredApps.map((app, index) => (
+          <div 
+            key={`${app.id}-${animationKey}`} 
+            className='app-card app-fade-in'
+            style={{ animationDelay: `${index * 0.1}s` }}
+          >
             {app.featured && <span className='featured-badge'>⭐</span>}
             <div className='app-icon'>{app.icon}</div>
             <h3 className='app-name'>{app.name}</h3>
