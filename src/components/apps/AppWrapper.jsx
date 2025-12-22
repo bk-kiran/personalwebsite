@@ -4,6 +4,8 @@ import './AppWrapper.css'
 import WordleClone from './WordleClone'
 import PomodoroTimer from './PomodoroTimer'
 import JSONFormatter from './JSONFormatter'
+import GradeCalculator from './GradeCalculator'
+import GPACalculator from './GPACalculator'
 
 const AppWrapper = () => {
   const { slug } = useParams()
@@ -52,6 +54,34 @@ const AppWrapper = () => {
         'Sort object keys',
         'Escape/Unescape strings',
         'Copy & download output'
+      ]
+    },
+    'grade-calculator': {
+      name: 'Grade Calculator',
+      description: 'Calculate your overall course percentage based on component grades and weightages.',
+      icon: '📊',
+      category: 'Academic Tools',
+      component: GradeCalculator,
+      githubUrl: '#',
+      features: [
+        'Add multiple grade components',
+        'Set custom weightages',
+        'Calculate weighted average',
+        'Real-time percentage calculation'
+      ]
+    },
+    'gpa-calculator': {
+      name: 'GPA Calculator',
+      description: 'Calculate your semester GPA based on courses, credits, and letter grades.',
+      icon: '🎓',
+      category: 'Academic Tools',
+      component: GPACalculator,
+      githubUrl: '#',
+      features: [
+        'Add multiple courses',
+        'Standard 4.0 GPA scale',
+        'Credit-weighted calculation',
+        'Grade scale reference'
       ]
     }
     // Add more apps here as you build them

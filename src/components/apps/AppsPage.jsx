@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons' 
-import { faSearchengin } from '@fortawesome/free-brands-svg-icons' 
+import { faSearchengin } from '@fortawesome/free-brands-svg-icons'
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
 import './AppsPage.css'
 
 const AppsPage = () => {
@@ -22,6 +23,8 @@ const AppsPage = () => {
       featured: true,
       githubUrl: 'https://github.com/bk-kiran/wordleclone',
       hasApp: true,
+      hasLink: false,
+      linkUrl: '',
     },
     {
       id: 2,
@@ -33,6 +36,8 @@ const AppsPage = () => {
       featured: false,
       githubUrl: '#',
       hasApp: true,
+      hasLink: false,
+      linkUrl: '',
     },
     {
       id: 3,
@@ -41,9 +46,37 @@ const AppsPage = () => {
       description: 'Format, validate, and manipulate JSON data with ease. Perfect for developers!',
       icon: '🛠️',
       category: 'Developer Tools',
+      featured: false,
+      githubUrl: 'https://github.com/bk-kiran/gpacalculator',
+      hasApp: true,
+      hasLink: false,
+      linkUrl: '',
+    },
+    {
+      id: 4,
+      name: 'Grade Calculator',
+      slug: 'grade-calculator',
+      description: 'Calculate your overall course percentage based on component grades and weightages.',
+      icon: '📊',
+      category: 'Academic Tools',
+      featured: true,
+      githubUrl: 'https://github.com/bk-kiran/gpacalculator',
+      hasApp: true,
+      hasLink: true,
+      linkUrl: 'https://gradecalculator.kiranbk.com',
+    },
+    {
+      id: 5,
+      name: 'GPA Calculator',
+      slug: 'gpa-calculator',
+      description: 'Calculate your semester GPA based on courses, credits, and letter grades.',
+      icon: '🎓',
+      category: 'Academic Tools',
       featured: true,
       githubUrl: '#',
       hasApp: true,
+      hasLink: true,
+      linkUrl: 'https://gradecalculator.kiranbk.com',
     },
   ]
 
@@ -76,6 +109,12 @@ const AppsPage = () => {
       window.open(app.githubUrl, '_blank')
     } else {
       alert('GitHub repo coming soon!')
+    }
+  }
+
+  const handleLinkClick = (app) => {
+    if (app.linkUrl && app.linkUrl !== '') {
+      window.open(app.linkUrl, '_blank')
     }
   }
 
@@ -128,11 +167,20 @@ const AppsPage = () => {
             <h3 className='app-name'>{app.name}</h3>
             <p className='app-description'>{app.description}</p>
             <div className='app-footer'>
-              <FontAwesomeIcon
-                icon={faGithub}
-                className="github-icon"
-                onClick={() => handleGithubClick(app)}
-              />
+              <div className='app-icons'>
+                <FontAwesomeIcon
+                  icon={faGithub}
+                  className="github-icon"
+                  onClick={() => handleGithubClick(app)}
+                />
+                {app.hasLink && (
+                  <FontAwesomeIcon
+                    icon={faExternalLinkAlt}
+                    className="external-link-icon"
+                    onClick={() => handleLinkClick(app)}
+                  />
+                )}
+              </div>
               <button className='try-now-btn' onClick={() => handleTryNow(app)}>
                 {app.hasApp ? 'Try Now' : 'Coming Soon'}
               </button>

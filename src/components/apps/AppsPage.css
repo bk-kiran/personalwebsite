@@ -272,6 +272,33 @@ body.dark-mode .app-description {
     gap: 12px;
 }
 
+.app-icons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.external-link-icon {
+  font-size: 16px;
+  color: #222;
+  cursor: pointer;
+  opacity: 0.85;
+  transition: all 0.2s ease;
+}
+
+.external-link-icon:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+body.dark-mode .external-link-icon {
+    color: #b3b3b3;
+}
+
+body.dark-mode .external-link-icon:hover {
+    color: #ffffff;
+}
+
 .app-category {
     font-size: 12px;
     font-weight: 600;

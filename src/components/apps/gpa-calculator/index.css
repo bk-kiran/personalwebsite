@@ -1,0 +1,373 @@
+.gpa-calculator {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.calculator-container {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+body.dark-mode .calculator-container {
+  background: #1f2937;
+}
+
+.calculator-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.calculator-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 10px 0;
+}
+
+body.dark-mode .calculator-header h2 {
+  color: #ffffff;
+}
+
+.calculator-header p {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+body.dark-mode .calculator-header p {
+  color: #b3b3b3;
+}
+
+.table-container {
+  margin-bottom: 30px;
+}
+
+.gpa-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.gpa-table thead {
+  background: #f3f4f6;
+}
+
+body.dark-mode .gpa-table thead {
+  background: #374151;
+}
+
+.gpa-table th {
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  color: #374151;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+body.dark-mode .gpa-table th {
+  color: #ffffff;
+  border-bottom-color: #4b5563;
+}
+
+.gpa-table td {
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+body.dark-mode .gpa-table td {
+  border-bottom-color: #4b5563;
+}
+
+.course-name-input,
+.credits-input {
+  width: 100%;
+  max-width: 150px;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  background: #ffffff;
+  color: #1f2937;
+}
+
+body.dark-mode .course-name-input,
+body.dark-mode .credits-input {
+  background: #374151;
+  border-color: #4b5563;
+  color: #ffffff;
+}
+
+.course-name-input:focus,
+.credits-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.grade-select {
+  width: 100%;
+  max-width: 120px;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  background: #ffffff;
+  color: #1f2937;
+  cursor: pointer;
+}
+
+body.dark-mode .grade-select {
+  background: #374151;
+  border-color: #4b5563;
+  color: #ffffff;
+}
+
+.grade-select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.remove-btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  line-height: 1;
+}
+
+.remove-btn:hover {
+  background: #dc2626;
+  transform: scale(1.1);
+}
+
+.table-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-start;
+}
+
+.add-row-btn,
+.clear-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.add-row-btn {
+  background: #667eea;
+  color: white;
+}
+
+.add-row-btn:hover {
+  background: #5568d3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.clear-btn {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+body.dark-mode .clear-btn {
+  background: #374151;
+  color: #d1d5db;
+}
+
+.clear-btn:hover {
+  background: #e5e7eb;
+}
+
+body.dark-mode .clear-btn:hover {
+  background: #4b5563;
+}
+
+.calculation-section {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 2px solid #e5e7eb;
+  margin-bottom: 30px;
+}
+
+body.dark-mode .calculation-section {
+  border-top-color: #4b5563;
+}
+
+.calculate-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.calculate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.result-display {
+  background: linear-gradient(135deg, #e5fcf5 0%, #d1fae5 100%);
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+body.dark-mode .result-display {
+  background: linear-gradient(135deg, #064e3b 0%, #065f46 100%);
+}
+
+.result-label {
+  font-size: 14px;
+  color: #059669;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+body.dark-mode .result-label {
+  color: #34d399;
+}
+
+.result-value {
+  font-size: 36px;
+  font-weight: 700;
+  color: #047857;
+  margin-bottom: 4px;
+}
+
+body.dark-mode .result-value {
+  color: #6ee7b7;
+}
+
+.result-scale {
+  font-size: 12px;
+  color: #059669;
+  opacity: 0.8;
+}
+
+body.dark-mode .result-scale {
+  color: #34d399;
+}
+
+.grade-info {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 2px solid #e5e7eb;
+}
+
+body.dark-mode .grade-info {
+  border-top-color: #4b5563;
+}
+
+.grade-info h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 16px 0;
+  text-align: center;
+}
+
+body.dark-mode .grade-info h3 {
+  color: #ffffff;
+}
+
+.grade-scale-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 12px;
+}
+
+.grade-scale-item {
+  background: #f3f4f6;
+  padding: 12px;
+  border-radius: 6px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+body.dark-mode .grade-scale-item {
+  background: #374151;
+}
+
+.grade-letter {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+body.dark-mode .grade-letter {
+  color: #ffffff;
+}
+
+.grade-points {
+  font-size: 12px;
+  color: #666;
+}
+
+body.dark-mode .grade-points {
+  color: #b3b3b3;
+}
+
+@media (max-width: 768px) {
+  .calculator-container {
+    padding: 20px;
+  }
+
+  .gpa-table {
+    font-size: 12px;
+  }
+
+  .gpa-table th,
+  .gpa-table td {
+    padding: 8px;
+  }
+
+  .course-name-input,
+  .credits-input,
+  .grade-select {
+    max-width: 100%;
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .table-actions {
+    flex-direction: column;
+  }
+
+  .add-row-btn,
+  .clear-btn {
+    width: 100%;
+  }
+
+  .grade-scale-grid {
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap: 8px;
+  }
+}
