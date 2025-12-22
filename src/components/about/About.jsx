@@ -62,6 +62,75 @@ const About = () => {
           </div>
       </section>
 
+      <section className="educationpage page-enter" id="educationpage">
+        <div className='educationpageheadings'>
+          <p className='educationpagetitle'>EDUCATION</p>
+        </div>
+        
+        <div className="education-content">
+          <div className="education-school">
+            <h3>University of Massachusetts Amherst</h3>
+            <p className="education-degree">Bachelor of Science - BS, Computer Science</p>
+            <p className="education-dates">Sep 2023 - May 2027</p>
+            <p className="education-gpa">GPA: 3.9/4.0</p>
+          </div>
+          
+          <div className="education-courses">
+            <h4>Relevant Coursework</h4>
+            <div className="courses-list">
+              <div className="course-item">
+                <span className="course-code">CS 446</span>
+                <span className="course-name">Search Engines</span>
+              </div>
+              <div className="course-item">
+                <span className="course-code">CS 383</span>
+                <span className="course-name">Artificial Intelligence</span>
+              </div>
+              <div className="course-item">
+                <span className="course-code">CS 345</span>
+                <span className="course-name">Database Management</span>
+              </div>
+              <div className="course-item">
+                <span className="course-code">CS 328</span>
+                <span className="course-name">Health Data Sensing & Analytics</span>
+              </div>
+              <div className="course-item">
+                <span className="course-code">CS 326</span>
+                <span className="course-name">Web Programming (Software Engineering)</span>
+              </div>
+              <div className="course-item">
+                <span className="course-code">CS 250</span>
+                <span className="course-name">Discrete Mathematics</span>
+              </div>
+              <div className="course-item">
+                <span className="course-code">CS 240</span>
+                <span className="course-name">Probabilistic Reasoning</span>
+              </div>
+              <div className="course-item">
+                <span className="course-code">CS 230</span>
+                <span className="course-name">Computer Systems</span>
+              </div>
+              <div className="course-item">
+                <span className="course-code">CS 220</span>
+                <span className="course-name">Programming Methodologies (JavaScript/TypeScript)</span>
+              </div>
+              <div className="course-item">
+                <span className="course-code">CS 210</span>
+                <span className="course-name">Data Structures and Algorithms</span>
+              </div>
+              <div className="course-item">
+                <span className="course-code">CS 160</span>
+                <span className="course-name">Object-Oriented Programming</span>
+              </div>
+              <div className="course-item">
+                <span className="course-code">CS 110</span>
+                <span className="course-name">Computing with Python</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="metricspage page-enter" id="metricspage">
         <div className='metricspageheadings'>
           <p className='metricspagetitle'>BY THE NUMBERS</p>
@@ -124,6 +193,7 @@ const About = () => {
         </div>
 
       </section>
+
     </section>
   )
 }

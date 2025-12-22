@@ -115,3 +115,190 @@ body.dark-mode .aboutpagecaption {
     text-align: left;
   }
 }
+
+/* Education Section */
+.educationpage {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 70px auto 60px;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.educationpageheadings {
+  margin-bottom: 5px;
+}
+
+.educationpageheadings h2 {
+  font-size: clamp(22px, 3.5vw, 26px);
+  color: #1f2937;
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .educationpageheadings h2 {
+  color: #ffffff;
+}
+
+.educationpagetitle {
+  color: #7CB9E8;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  font-size: clamp(11px, 2vw, 15px);
+  margin: 0;
+  opacity: 1;
+  transform: translateY(0);
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .educationpagetitle {
+  color: #ff1b6b;
+}
+
+.education-content {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.education-school {
+  display: flex;
+  flex-direction: column;
+}
+
+.education-school h3 {
+  font-size: clamp(18px, 2.5vw, 22px);
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 12px 0;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .education-school h3 {
+  color: #ffffff;
+}
+
+.education-degree {
+  font-size: clamp(14px, 2vw, 16px);
+  color: #374151;
+  font-weight: 500;
+  margin: 0 0 10px 0;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .education-degree {
+  color: #b3b3b3;
+}
+
+.education-dates {
+  font-size: clamp(13px, 1.8vw, 15px);
+  color: #666;
+  font-weight: 500;
+  margin: 0 0 10px 0;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .education-dates {
+  color: #b3b3b3;
+}
+
+.education-gpa {
+  font-size: clamp(13px, 1.8vw, 15px);
+  color: #666;
+  font-weight: 500;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .education-gpa {
+  color: #b3b3b3;
+}
+
+.education-courses h4 {
+  font-size: clamp(16px, 2.2vw, 18px);
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 12px 0;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .education-courses h4 {
+  color: #ffffff;
+}
+
+.courses-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+  margin: 0;
+}
+
+.course-item {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: clamp(13px, 1.8vw, 15px);
+  line-height: 1.6;
+  padding: 4px 0;
+  transition: color 0.3s ease;
+}
+
+.course-code {
+  font-weight: 600;
+  color: #2563eb;
+  min-width: 60px;
+  flex-shrink: 0;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .course-code {
+  color: #60a5fa;
+}
+
+.course-name {
+  color: #222;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .course-name {
+  color: #b3b3b3;
+}
+
+@media (max-width: 768px) {
+  .educationpage {
+    margin: 60px auto 50px;
+    padding: 0 20px;
+  }
+  
+  .educationpageheadings {
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  
+  .courses-list {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .educationpage {
+    margin: 40px auto 40px;
+    padding: 0 16px;
+  }
+  
+  .educationpageheadings {
+    margin-bottom: 20px;
+  }
+  
+  .courses-list {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}

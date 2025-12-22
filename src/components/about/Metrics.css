@@ -29,6 +29,11 @@
     margin: 0;
     opacity: 1;
     transform: translateY(0);
+    transition: color 0.3s ease;
+}
+
+body.dark-mode .metricspagetitle {
+    color: #ff1b6b;
 }
 
 .metrics-grid {

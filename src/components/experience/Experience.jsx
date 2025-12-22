@@ -21,7 +21,7 @@ const Experience = () => {
             <div className="timelineleftcontainer">
                 <img src={build} alt=""/>
                 <div className="timelinetextbox">
-                    <h3>Software Developer @ BUILD UMass</h3>
+                    <h3>Software Developer + Treasurer @ BUILD UMass</h3>
                     <small>Sep 2025-</small>
                     <p>BUILD is a pro-bono organization working with local businesses, charities to build technical products.</p>
                 </div>
