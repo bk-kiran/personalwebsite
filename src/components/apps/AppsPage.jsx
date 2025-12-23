@@ -69,7 +69,7 @@ const AppsPage = () => {
       id: 5,
       name: 'GPA Calculator',
       slug: 'gpa-calculator',
-      description: 'Calculate your semester GPA based on courses, credits, and letter grades.',
+      description: 'Track your GPA across multiple semesters and calculate your cumulative GPA with course grades and credits.',
       icon: '🎓',
       category: 'Academic Tools',
       featured: true,

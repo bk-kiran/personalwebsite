@@ -72,16 +72,18 @@ const AppWrapper = () => {
     },
     'gpa-calculator': {
       name: 'GPA Calculator',
-      description: 'Calculate your semester GPA based on courses, credits, and letter grades.',
+      description: 'Track your GPA across multiple semesters and calculate your cumulative GPA with course grades and credits.',
       icon: '🎓',
       category: 'Academic Tools',
       component: GPACalculator,
       githubUrl: '#',
       features: [
-        'Add multiple courses',
+        'Add multiple semesters',
+        'Track courses per semester',
+        'Calculate semester GPA',
+        'Calculate cumulative GPA',
         'Standard 4.0 GPA scale',
-        'Credit-weighted calculation',
-        'Grade scale reference'
+        'Credit-weighted calculation'
       ]
     }
     // Add more apps here as you build them
