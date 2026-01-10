@@ -78,6 +78,19 @@ const AppsPage = () => {
       hasLink: true,
       linkUrl: 'https://gradecalculator.kiranbk.com',
     },
+    {
+      id: 6,
+      name: 'Budget Tracker',
+      slug: 'budget-tracker',
+      description: 'Track your monthly income, expenses, and budgets. Manage subscriptions and get insights into your spending habits.',
+      icon: '💰',
+      category: 'Finance',
+      featured: true,
+      githubUrl: '#',
+      hasApp: true,
+      hasLink: false,
+      linkUrl: '',
+    },
   ]
 
   const categories = ['All Apps', 'Featured', ...new Set(apps.map(app => app.category))]

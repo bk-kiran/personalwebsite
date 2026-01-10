@@ -6,6 +6,7 @@ import PomodoroTimer from './PomodoroTimer'
 import JSONFormatter from './JSONFormatter'
 import GradeCalculator from './GradeCalculator'
 import GPACalculator from './GPACalculator'
+import BudgetTracker from './BudgetTracker'
 
 const AppWrapper = () => {
   const { slug } = useParams()
@@ -84,6 +85,22 @@ const AppWrapper = () => {
         'Calculate cumulative GPA',
         'Standard 4.0 GPA scale',
         'Credit-weighted calculation'
+      ]
+    },
+    'budget-tracker': {
+      name: 'Budget Tracker',
+      description: 'Track your monthly income, expenses, and budgets. Manage subscriptions and get insights into your spending habits.',
+      icon: '💰',
+      category: 'Finance',
+      component: BudgetTracker,
+      githubUrl: '#',
+      features: [
+        'Track income and expenses',
+        'Monthly budget by category',
+        'Recurring subscriptions',
+        'Export to CSV/JSON',
+        'Spending insights',
+        'Local data storage'
       ]
     }
     // Add more apps here as you build them
